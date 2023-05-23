@@ -2,16 +2,16 @@
 
 namespace app\modules\admin\controllers;
 
-use app\models\ToursCategory;
-use app\models\ToursCategorySearch;
+use app\models\Test;
+use app\models\TestSearch;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
 
 /**
- * ToursCategoryController implements the CRUD actions for ToursCategory model.
+ * TestController implements the CRUD actions for Test model.
  */
-class ToursCategoryController extends DefaultController
+class TestController extends DefaultController
 {
     /**
      * @inheritDoc
@@ -32,13 +32,13 @@ class ToursCategoryController extends DefaultController
     }
 
     /**
-     * Lists all ToursCategory models.
+     * Lists all Test models.
      *
      * @return string
      */
     public function actionIndex()
     {
-        $searchModel = new ToursCategorySearch();
+        $searchModel = new TestSearch();
         $dataProvider = $searchModel->search($this->request->queryParams);
 
         return $this->render('index', [
@@ -48,7 +48,7 @@ class ToursCategoryController extends DefaultController
     }
 
     /**
-     * Displays a single ToursCategory model.
+     * Displays a single Test model.
      * @param int $id ID
      * @return string
      * @throws NotFoundHttpException if the model cannot be found
@@ -61,13 +61,13 @@ class ToursCategoryController extends DefaultController
     }
 
     /**
-     * Creates a new ToursCategory model.
+     * Creates a new Test model.
      * If creation is successful, the browser will be redirected to the 'view' page.
      * @return string|\yii\web\Response
      */
     public function actionCreate()
     {
-        $model = new ToursCategory();
+        $model = new Test();
 
         if ($model->load($this->request->post())) {
             echo "<pre>";
@@ -90,7 +90,7 @@ class ToursCategoryController extends DefaultController
     }
 
     /**
-     * Updates an existing ToursCategory model.
+     * Updates an existing Test model.
      * If update is successful, the browser will be redirected to the 'view' page.
      * @param int $id ID
      * @return string|\yii\web\Response
@@ -100,28 +100,17 @@ class ToursCategoryController extends DefaultController
     {
         $model = $this->findModel($id);
 
-        $nameValues = json_decode($model->name, true);
-
-        if ($this->request->isPost && $model->load($this->request->post())) {
-            if ($model->validate()) {
-                $model->name = json_encode($model->translate_name, JSON_UNESCAPED_SLASHES);
-                $model->save();
-                return $this->redirect(['index']);
-            } else {
-                print_r($model->errors);
-                die;
-            }
-            return $this->redirect(['index']);
+        if ($this->request->isPost && $model->load($this->request->post()) && $model->save()) {
+            return $this->redirect(['view', 'id' => $model->id]);
         }
 
         return $this->render('update', [
             'model' => $model,
-            'nameValues' => $nameValues
         ]);
     }
 
     /**
-     * Deletes an existing ToursCategory model.
+     * Deletes an existing Test model.
      * If deletion is successful, the browser will be redirected to the 'index' page.
      * @param int $id ID
      * @return \yii\web\Response
@@ -135,15 +124,15 @@ class ToursCategoryController extends DefaultController
     }
 
     /**
-     * Finds the ToursCategory model based on its primary key value.
+     * Finds the Test model based on its primary key value.
      * If the model is not found, a 404 HTTP exception will be thrown.
      * @param int $id ID
-     * @return ToursCategory the loaded model
+     * @return Test the loaded model
      * @throws NotFoundHttpException if the model cannot be found
      */
     protected function findModel($id)
     {
-        if (($model = ToursCategory::findOne(['id' => $id])) !== null) {
+        if (($model = Test::findOne(['id' => $id])) !== null) {
             return $model;
         }
 

@@ -1,0 +1,51 @@
+<?php
+
+namespace app\models;
+
+use Yii;
+
+/**
+ * This is the model class for table "test".
+ *
+ * @property int $id
+ * @property string $name
+ * @property string|null $phone
+ * @property int $amount
+ * @property int|null $status
+ */
+class Test extends \yii\db\ActiveRecord
+{
+    /**
+     * {@inheritdoc}
+     */
+    public static function tableName()
+    {
+        return 'test';
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function rules()
+    {
+        return [
+            [['name', 'amount'], 'required'],
+            [['amount', 'status'], 'integer'],
+            [['name', 'phone'], 'string', 'max' => 255],
+        ];
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function attributeLabels()
+    {
+        return [
+            'id' => 'ID',
+            'name' => 'Oti',
+            'phone' => 'Telefoni',
+            'amount' => 'Miqdori',
+            'status' => 'Maqomi',
+        ];
+    }
+}

@@ -28,6 +28,7 @@ use Yii;
  */
 class Tours extends \yii\db\ActiveRecord
 {
+    public $translate_message;
     /**
      * {@inheritdoc}
      */
