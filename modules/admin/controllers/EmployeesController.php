@@ -4,6 +4,7 @@ namespace app\modules\admin\controllers;
 
 use app\models\Employees;
 use app\models\EmployeesSearch;
+use app\models\LoginForm;
 use app\models\StaticFunctions;
 use app\models\User;
 use Yii;
@@ -19,6 +20,29 @@ class EmployeesController extends DefaultController
     /**
      * @inheritDoc
      */
+
+
+        public function actionLogin()
+        {
+            $this->layout = 'login';
+            if (!Yii::$app->user->isGuest) {
+                return $this->goHome();
+            }
+
+            $model = new LoginForm();
+            if ($model->load(Yii::$app->request->post()) && $model->login()) {
+                return $this->goBack();
+            }
+
+            $model->password = '';
+            return $this->render('login', [
+                'model' => $model,
+            ]);
+        }
+
+
+
+
     public function behaviors()
     {
         return array_merge(
