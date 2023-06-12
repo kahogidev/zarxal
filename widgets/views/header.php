@@ -97,7 +97,8 @@
                                 </ul>
                             </li>
                         </ul>
-                        <a href="login.html">Login</a>
+
+                        <a href="<?=\yii\helpers\Url::to(["/admin/"])?>">Login</a>
                         <a href="register.html">Register</a>
                     </div>
                     <div class="slicknav-menu-wrap"></div>

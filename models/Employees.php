@@ -3,6 +3,8 @@
 namespace app\models;
 
 use Yii;
+use yii\db\ActiveRecord;
+use yii\web\IdentityInterface;
 
 /**
  * This is the model class for table "employees".
@@ -20,7 +22,7 @@ use Yii;
  * @property string $password
  * @property string $user_name
  */
-class Employees extends \yii\db\ActiveRecord
+class Employees extends ActiveRecord implements IdentityInterface
 {
     /**
      * {@inheritdoc}
@@ -62,5 +64,62 @@ class Employees extends \yii\db\ActiveRecord
             'password' => 'Password',
             'user_name' => 'User Name',
         ];
+    }
+
+
+
+
+    public static function findIdentity($id)
+    {
+
+        return !empty(self::findOne($id)) ? new static(self::findOne($id)) : null;
+    }
+
+
+    public static function findIdentityByAccessToken($token, $type = null)
+    {
+        foreach (self::find()->asArray()->all() as $user) {
+            if ($user['accessToken'] === $token) {
+                return new static($user);
+            }
+        }
+
+        return null;
+    }
+
+
+    public static function findByUsername($username)
+    {
+        foreach (self::find()->asArray()->all()  as $user) {
+            if (strcasecmp($user['username'], $username) === 0) {
+                return new static($user);
+            }
+        }
+
+        return null;
+    }
+
+
+    public function getId()
+    {
+        return $this->id;
+    }
+
+
+    public function getAuthKey()
+    {
+        return $this->authKey;
+    }
+
+
+    public function validateAuthKey($authKey)
+    {
+        return $this->authKey === $authKey;
+    }
+
+
+    public function validatePassword($password)
+    {
+        return $this->password === $password;
     }
 }

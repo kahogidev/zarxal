@@ -2,14 +2,10 @@
 
 use yii\db\Migration;
 
-/**
- * Handles the creation of table `{{%employees}}`.
- */
-class m230428_165154_create_employees_table extends Migration
+
+class m230608_055437_create_employees_table extends Migration
 {
-    /**
-     * {@inheritdoc}
-     */
+
     public function safeUp()
     {
         $this->createTable('{{%employees}}', [

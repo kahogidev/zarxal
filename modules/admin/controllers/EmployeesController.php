@@ -5,12 +5,10 @@ namespace app\modules\admin\controllers;
 use app\models\Employees;
 use app\models\EmployeesSearch;
 use app\models\LoginForm;
-use app\models\StaticFunctions;
-use app\models\User;
 use Yii;
+use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
-use yii\web\UploadedFile;
 
 /**
  * EmployeesController implements the CRUD actions for Employees model.
@@ -20,29 +18,6 @@ class EmployeesController extends DefaultController
     /**
      * @inheritDoc
      */
-
-
-        public function actionLogin()
-        {
-            $this->layout = 'login';
-            if (!Yii::$app->user->isGuest) {
-                return $this->goHome();
-            }
-
-            $model = new LoginForm();
-            if ($model->load(Yii::$app->request->post()) && $model->login()) {
-                return $this->goBack();
-            }
-
-            $model->password = '';
-            return $this->render('login', [
-                'model' => $model,
-            ]);
-        }
-
-
-
-
     public function behaviors()
     {
         return array_merge(
@@ -58,7 +33,11 @@ class EmployeesController extends DefaultController
         );
     }
 
-
+    /**
+     * Lists all Employees models.
+     *
+     * @return string
+     */
     public function actionIndex()
     {
         $searchModel = new EmployeesSearch();
@@ -70,7 +49,12 @@ class EmployeesController extends DefaultController
         ]);
     }
 
-
+    /**
+     * Displays a single Employees model.
+     * @param int $id ID
+     * @return string
+     * @throws NotFoundHttpException if the model cannot be found
+     */
     public function actionView($id)
     {
         return $this->render('view', [
@@ -78,29 +62,21 @@ class EmployeesController extends DefaultController
         ]);
     }
 
-
+    /**
+     * Creates a new Employees model.
+     * If creation is successful, the browser will be redirected to the 'view' page.
+     * @return string|\yii\web\Response
+     */
     public function actionCreate()
     {
         $model = new Employees();
-        if ($model->load(Yii::$app->request->post())) {
-            $model->created_date = date("Y-m-d H:i:s");
-            $model->updated_time = date("Y-m-d H:i:s");
-//            $model->creator = Yii::$app->user->getId();
-            $model->generatePassword($model->password);
-            if ($model->save()){
-                $model->file = UploadedFile::getInstance($model, 'avatar');
-                $model->saveAvatarImage();
-                $model->avatar = $model->file->baseName . '.' . $model->file->extension;
-//                print_r($model->file);die;
-//                $model->avatar = $model->saveAvatarImage();
-                if ($model->save()){
-                    return $this->redirect(['index', 'id' => $model->id]);
-                }else {
-                    return debug($model->errors);
-                }
-            }else{
-                return debug($model->errors);
+
+        if ($this->request->isPost) {
+            if ($model->load($this->request->post()) && $model->save()) {
+                return $this->redirect(['view', 'id' => $model->id]);
             }
+        } else {
+            $model->loadDefaultValues();
         }
 
         return $this->render('create', [
@@ -108,39 +84,33 @@ class EmployeesController extends DefaultController
         ]);
     }
 
+    /**
+     * Updates an existing Employees model.
+     * If update is successful, the browser will be redirected to the 'view' page.
+     * @param int $id ID
+     * @return string|\yii\web\Response
+     * @throws NotFoundHttpException if the model cannot be found
+     */
     public function actionUpdate($id)
     {
         $model = $this->findModel($id);
-        $model->password = "";
-        $oldImage = $model->avatar;
-        if ($model->load(Yii::$app->request->post())) {
-            $model->updated_time = date("Y-m-d H:i:s");
-            $model->generatePassword($model->password);
 
-            $model->file = UploadedFile::getInstance($model,'avatar');
-            if (!empty($model->file)){
-                $model->avatar = $model->saveAvatarImage();
-                $model->deleteOldImage($oldImage);
-            }else{
-                $model->avatar = $oldImage;
-            }
-
-            if ($model->save()){
-                return $this->redirect(['index', 'id' => $model->id]);
-            }else{
-                return debug($model->errors);
-            }
+        if ($this->request->isPost && $model->load($this->request->post()) && $model->save()) {
+            return $this->redirect(['view', 'id' => $model->id]);
         }
-
-        $userAvatar = StaticFunctions::getImage('user',$model->id, $model->avatar);
 
         return $this->render('update', [
             'model' => $model,
-            'userAvatar' => $userAvatar
         ]);
     }
 
-
+    /**
+     * Deletes an existing Employees model.
+     * If deletion is successful, the browser will be redirected to the 'index' page.
+     * @param int $id ID
+     * @return \yii\web\Response
+     * @throws NotFoundHttpException if the model cannot be found
+     */
     public function actionDelete($id)
     {
         $this->findModel($id)->delete();
@@ -148,9 +118,35 @@ class EmployeesController extends DefaultController
         return $this->redirect(['index']);
     }
 
+    public function actionLogin(){
+        $this->layout = 'login';
+        if (!Yii::$app->user->isGuest) {
+            return $this->goHome();
+        }
 
+        $model = new LoginForm();
+        if ($model->load(Yii::$app->request->post()) && $model->login()) {
+            return $this->goBack();
+        }
 
+        $model->password = '';
+        return $this->render('login', [
+            'model' => $model,
+        ]);
+    }
 
+    public function actionLogout(){
+        Yii::$app->user->logout();
+        return $this->goHome();
+    }
+
+    /**
+     * Finds the Employees model based on its primary key value.
+     * If the model is not found, a 404 HTTP exception will be thrown.
+     * @param int $id ID
+     * @return Employees the loaded model
+     * @throws NotFoundHttpException if the model cannot be found
+     */
     protected function findModel($id)
     {
         if (($model = Employees::findOne(['id' => $id])) !== null) {
