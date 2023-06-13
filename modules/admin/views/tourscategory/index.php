@@ -1,18 +1,19 @@
 <?php
 
-use app\models\Tours;
+use app\models\Tourscategory;
 use yii\helpers\Html;
 use yii\helpers\Url;
 use yii\grid\ActionColumn;
 use yii\grid\GridView;
 
 /** @var yii\web\View $this */
-/** @var app\models\ToursSearch $searchModel */
+/** @var app\models\TourscategorySearch $searchModel */
 /** @var yii\data\ActiveDataProvider $dataProvider */
 
-$this->title = 'Tours';
+$this->title = 'Tourscategories';
 $this->params['breadcrumbs'][] = $this->title;
 ?>
+
 <div class="col-xl-12">
     <div class="card dz-card" id="bootstrap-table2">
 
@@ -24,7 +25,7 @@ $this->params['breadcrumbs'][] = $this->title;
             </div>
             <ul class="nav nav-tabs dzm-tabs" id="myTab-1" role="tablist">
                 <li class="nav-item" role="presentation">
-                    <button   class=" btn btn-secondary" ><?= Html::a('Create Tours', ['create'],['style' =>'color:white;font-weight:bold']) ?></button>
+                    <button   class=" btn btn-secondary" ><?= Html::a('Create Tourscategory', ['create'], ['style' =>'color:white;font-weight:bold']) ?></button>
                 </li>
 
             </ul>
@@ -40,19 +41,12 @@ $this->params['breadcrumbs'][] = $this->title;
             ['class' => 'yii\grid\SerialColumn'],
 
             'id',
-            'title',
-            'description',
-            'category_id',
-            'body:ntext',
-            //'created_date',
-            //'updated_date',
-            //'images',
-            //'price',
-            //'period',
-            //'status',
+            'name',
+            'images',
+            'status',
             [
                 'class' => ActionColumn::className(),
-                'urlCreator' => function ($action, Tours $model, $key, $index, $column) {
+                'urlCreator' => function ($action, Tourscategory $model, $key, $index, $column) {
                     return Url::toRoute([$action, 'id' => $model->id]);
                  }
             ],

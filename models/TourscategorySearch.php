@@ -4,12 +4,12 @@ namespace app\models;
 
 use yii\base\Model;
 use yii\data\ActiveDataProvider;
-use app\models\ToursCategory;
+use app\models\Tourscategory;
 
 /**
- * ToursCategorySearch represents the model behind the search form of `app\models\ToursCategory`.
+ * TourscategorySearch represents the model behind the search form of `app\models\Tourscategory`.
  */
-class ToursCategorySearch extends ToursCategory
+class TourscategorySearch extends Tourscategory
 {
     /**
      * {@inheritdoc}
@@ -40,7 +40,7 @@ class ToursCategorySearch extends ToursCategory
      */
     public function search($params)
     {
-        $query = ToursCategory::find();
+        $query = Tourscategory::find();
 
         // add conditions that should always apply here
 

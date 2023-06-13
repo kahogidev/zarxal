@@ -17,31 +17,17 @@ use yii\widgets\ActiveForm;
 
     <?= $form->field($model, 'id') ?>
 
-    <?= $form->field($model, 'title_uz') ?>
+    <?= $form->field($model, 'title') ?>
 
-    <?= $form->field($model, 'title_ru') ?>
+    <?= $form->field($model, 'description') ?>
 
-    <?= $form->field($model, 'title_en') ?>
+    <?= $form->field($model, 'category_id') ?>
 
-    <?= $form->field($model, 'description_uz') ?>
-
-    <?php // echo $form->field($model, 'description_ru') ?>
-
-    <?php // echo $form->field($model, 'description_en') ?>
-
-    <?php // echo $form->field($model, 'category_id') ?>
-
-    <?php // echo $form->field($model, 'body_uz') ?>
-
-    <?php // echo $form->field($model, 'body_ru') ?>
-
-    <?php // echo $form->field($model, 'body_en') ?>
+    <?= $form->field($model, 'body') ?>
 
     <?php // echo $form->field($model, 'created_date') ?>
 
     <?php // echo $form->field($model, 'updated_date') ?>
-
-    <?php // echo $form->field($model, 'seen_count') ?>
 
     <?php // echo $form->field($model, 'images') ?>
 

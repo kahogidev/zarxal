@@ -2,16 +2,16 @@
 
 namespace app\modules\admin\controllers;
 
-use app\models\ToursCategory;
-use app\models\ToursCategorySearch;
+use app\models\Tourscategory;
+use app\models\TourscategorySearch;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
 
 /**
- * ToursCategoryController implements the CRUD actions for ToursCategory model.
+ * TourscategoryController implements the CRUD actions for Tourscategory model.
  */
-class ToursCategoryController extends DefaultController
+class TourscategoryController extends DefaultController
 {
     /**
      * @inheritDoc
@@ -32,13 +32,13 @@ class ToursCategoryController extends DefaultController
     }
 
     /**
-     * Lists all ToursCategory models.
+     * Lists all Tourscategory models.
      *
      * @return string
      */
     public function actionIndex()
     {
-        $searchModel = new ToursCategorySearch();
+        $searchModel = new TourscategorySearch();
         $dataProvider = $searchModel->search($this->request->queryParams);
 
         return $this->render('index', [
@@ -48,7 +48,7 @@ class ToursCategoryController extends DefaultController
     }
 
     /**
-     * Displays a single ToursCategory model.
+     * Displays a single Tourscategory model.
      * @param int $id ID
      * @return string
      * @throws NotFoundHttpException if the model cannot be found
@@ -61,24 +61,17 @@ class ToursCategoryController extends DefaultController
     }
 
     /**
-     * Creates a new ToursCategory model.
+     * Creates a new Tourscategory model.
      * If creation is successful, the browser will be redirected to the 'view' page.
      * @return string|\yii\web\Response
      */
     public function actionCreate()
     {
-        $model = new ToursCategory();
+        $model = new Tourscategory();
 
-        if ($model->load($this->request->post())) {
-            echo "<pre>";
-//            print_r($model->translate_department_name); die();
-            if ($model->validate()) {
-                $model->name = json_encode($model->translate_name, JSON_UNESCAPED_SLASHES);
-                $model->save();
-                return $this->redirect(['index']);
-            } else {
-                print_r($model->errors);
-                die;
+        if ($this->request->isPost) {
+            if ($model->load($this->request->post()) && $model->save()) {
+                return $this->redirect(['view', 'id' => $model->id]);
             }
         } else {
             $model->loadDefaultValues();
@@ -90,7 +83,7 @@ class ToursCategoryController extends DefaultController
     }
 
     /**
-     * Updates an existing ToursCategory model.
+     * Updates an existing Tourscategory model.
      * If update is successful, the browser will be redirected to the 'view' page.
      * @param int $id ID
      * @return string|\yii\web\Response
@@ -100,28 +93,17 @@ class ToursCategoryController extends DefaultController
     {
         $model = $this->findModel($id);
 
-        $nameValues = json_decode($model->name, true);
-
-        if ($this->request->isPost && $model->load($this->request->post())) {
-            if ($model->validate()) {
-                $model->name = json_encode($model->translate_name, JSON_UNESCAPED_SLASHES);
-                $model->save();
-                return $this->redirect(['index']);
-            } else {
-                print_r($model->errors);
-                die;
-            }
-            return $this->redirect(['index']);
+        if ($this->request->isPost && $model->load($this->request->post()) && $model->save()) {
+            return $this->redirect(['view', 'id' => $model->id]);
         }
 
         return $this->render('update', [
             'model' => $model,
-            'nameValues' => $nameValues
         ]);
     }
 
     /**
-     * Deletes an existing ToursCategory model.
+     * Deletes an existing Tourscategory model.
      * If deletion is successful, the browser will be redirected to the 'index' page.
      * @param int $id ID
      * @return \yii\web\Response
@@ -135,15 +117,15 @@ class ToursCategoryController extends DefaultController
     }
 
     /**
-     * Finds the ToursCategory model based on its primary key value.
+     * Finds the Tourscategory model based on its primary key value.
      * If the model is not found, a 404 HTTP exception will be thrown.
      * @param int $id ID
-     * @return ToursCategory the loaded model
+     * @return Tourscategory the loaded model
      * @throws NotFoundHttpException if the model cannot be found
      */
     protected function findModel($id)
     {
-        if (($model = ToursCategory::findOne(['id' => $id])) !== null) {
+        if (($model = Tourscategory::findOne(['id' => $id])) !== null) {
             return $model;
         }
 

@@ -17,8 +17,8 @@ class ToursSearch extends Tours
     public function rules()
     {
         return [
-            [['id', 'category_id', 'seen_count', 'price', 'status'], 'integer'],
-            [['title_uz', 'title_ru', 'title_en', 'description_uz', 'description_ru', 'description_en', 'body_uz', 'body_ru', 'body_en', 'created_date', 'updated_date', 'images', 'period'], 'safe'],
+            [['id', 'category_id', 'price', 'status'], 'integer'],
+            [['title', 'description', 'body', 'created_date', 'updated_date', 'images', 'period'], 'safe'],
         ];
     }
 
@@ -62,20 +62,13 @@ class ToursSearch extends Tours
             'category_id' => $this->category_id,
             'created_date' => $this->created_date,
             'updated_date' => $this->updated_date,
-            'seen_count' => $this->seen_count,
             'price' => $this->price,
             'status' => $this->status,
         ]);
 
-        $query->andFilterWhere(['like', 'title_uz', $this->title_uz])
-            ->andFilterWhere(['like', 'title_ru', $this->title_ru])
-            ->andFilterWhere(['like', 'title_en', $this->title_en])
-            ->andFilterWhere(['like', 'description_uz', $this->description_uz])
-            ->andFilterWhere(['like', 'description_ru', $this->description_ru])
-            ->andFilterWhere(['like', 'description_en', $this->description_en])
-            ->andFilterWhere(['like', 'body_uz', $this->body_uz])
-            ->andFilterWhere(['like', 'body_ru', $this->body_ru])
-            ->andFilterWhere(['like', 'body_en', $this->body_en])
+        $query->andFilterWhere(['like', 'title', $this->title])
+            ->andFilterWhere(['like', 'description', $this->description])
+            ->andFilterWhere(['like', 'body', $this->body])
             ->andFilterWhere(['like', 'images', $this->images])
             ->andFilterWhere(['like', 'period', $this->period]);
 

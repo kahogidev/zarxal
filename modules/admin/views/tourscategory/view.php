@@ -4,14 +4,14 @@ use yii\helpers\Html;
 use yii\widgets\DetailView;
 
 /** @var yii\web\View $this */
-/** @var app\models\ToursCategory $model */
+/** @var app\models\Tourscategory $model */
 
 $this->title = $model->name;
-$this->params['breadcrumbs'][] = ['label' => 'Tours Categories', 'url' => ['index']];
+$this->params['breadcrumbs'][] = ['label' => 'Tourscategories', 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 \yii\web\YiiAsset::register($this);
 ?>
-<div class="tours-category-view">
+<div class="tourscategory-view">
 
     <h1><?= Html::encode($this->title) ?></h1>
 

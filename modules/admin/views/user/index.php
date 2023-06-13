@@ -13,13 +13,20 @@ use yii\grid\GridView;
 $this->title = 'Users';
 $this->params['breadcrumbs'][] = $this->title;
 ?>
-<div class="user-index">
+<div class="col-xl-12">
+    <div class="card dz-card" id="bootstrap-table2">
 
-    <h1><?= Html::encode($this->title) ?></h1>
+        <div class="card-header flex-wrap d-flex justify-content-between  border-0">
+            <div>
+                  <h1><?= Html::encode($this->title) ?></h1>
 
-    <p>
-        <?= Html::a('Create User', ['create'], ['class' => 'btn btn-success']) ?>
-    </p>
+            </div>
+            <ul class="nav nav-tabs dzm-tabs" id="myTab-1" role="tablist">
+                <li class="nav-item" role="presentation">
+                    <button   class=" btn btn-secondary" ><?= Html::a('Create Users', ['create'],['style' =>'color:white;font-weight:bold']) ?></button>
+                </li>
+            </ul>
+        </div>
 
     <?php // echo $this->render('_search', ['model' => $searchModel]); ?>
 
