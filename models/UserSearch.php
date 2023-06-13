@@ -4,12 +4,12 @@ namespace app\models;
 
 use yii\base\Model;
 use yii\data\ActiveDataProvider;
-use app\models\Employees;
+use app\models\User;
 
 /**
- * EmployeesSearch represents the model behind the search form of `app\models\Employees`.
+ * UserSearch represents the model behind the search form of `app\models\User`.
  */
-class EmployeesSearch extends Employees
+class UserSearch extends User
 {
     /**
      * {@inheritdoc}
@@ -18,7 +18,7 @@ class EmployeesSearch extends Employees
     {
         return [
             [['id', 'phone', 'telegram', 'position_id', 'status', 'creator'], 'integer'],
-            [['first_name', 'last_name', 'mahalla_id', 'image', 'password', 'user_name'], 'safe'],
+            [['first_name', 'last_name', 'mahalla_id', 'image', 'password', 'username'], 'safe'],
         ];
     }
 
@@ -40,7 +40,7 @@ class EmployeesSearch extends Employees
      */
     public function search($params)
     {
-        $query = Employees::find();
+        $query = User::find();
 
         // add conditions that should always apply here
 
@@ -71,7 +71,7 @@ class EmployeesSearch extends Employees
             ->andFilterWhere(['like', 'mahalla_id', $this->mahalla_id])
             ->andFilterWhere(['like', 'image', $this->image])
             ->andFilterWhere(['like', 'password', $this->password])
-            ->andFilterWhere(['like', 'user_name', $this->user_name]);
+            ->andFilterWhere(['like', 'username', $this->username]);
 
         return $dataProvider;
     }
