@@ -51,10 +51,24 @@ $this->params['breadcrumbs'][] = $this->title;
             //'period',
             //'status',
             [
-                'class' => ActionColumn::className(),
-                'urlCreator' => function ($action, Tours $model, $key, $index, $column) {
-                    return Url::toRoute([$action, 'id' => $model->id]);
-                 }
+                'class' => 'yii\grid\ActionColumn',
+                'header' => 'Amallar',
+                'headerOptions' => ['style' => 'text-align:center'],
+                'template' => '{buttons}',
+                'contentOptions' => ['style' => 'min-width:150px;max-width:150px;width:150px', 'class' => 'v-align-middle'],
+                'buttons' => [
+                    'buttons' => function ($url, $model) {
+                        $controller = Yii::$app->controller->id;
+                        $code = <<<BUTTONS
+                                <div class="btn-group flex-center">
+                                    <a href="/admin/{$controller}/update?id={$model->id}" class="btn btn-light"><img style="width: 15px;" src="/admin-files/icons/edit-blue.svg" alt=""></i></a>
+                                    <a href="/admin/{$controller}/delete?id={$model->id}" id="{$controller}{$model->id}" data-postID="{$model->id}" data-postType="{$controller}" class="btn btn-primary "><img style="width: 15px;" src="/admin-files/icons/trash-white.svg" alt=""></a>
+                                </div>
+BUTTONS;
+                        return $code;
+                    }
+
+                ],
             ],
         ],
     ]); ?>
