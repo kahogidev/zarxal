@@ -3,7 +3,7 @@
 namespace app\modules\admin\controllers;
 
 use app\models\LoginForm;
-use app\models\StaticFunctions;
+use app\models\StaticFunction;
 use app\models\User;
 use app\models\UserSearch;
 use Yii;
@@ -77,20 +77,24 @@ class UserController extends DefaultController
     }
 
 
-
     public function actionCreate()
     {
         $model = new User();
         if ($model->load(Yii::$app->request->post())) {
             $model->generatePassword($model->password);
             if ($model->save()){
-                $model->file = UploadedFile::getInstance($model, 'username');
+                $model->file = UploadedFile::getInstance($model, 'image');
                 $model->saveAvatarImage();
-                $model->username = $model->file->baseName . '.' . $model->file->extension;
-
+                $model->image = $model->file->baseName . '.' . $model->file->extension;
+//                print_r($model->file);die;
+//                $model->avatar = $model->saveAvatarImage();
                 if ($model->save()){
                     return $this->redirect(['index', 'id' => $model->id]);
+                }else {
+                    return $this->debug($model->errors);
                 }
+            }else{
+                return debug($model->errors);
             }
         }
 
@@ -103,25 +107,27 @@ class UserController extends DefaultController
     {
         $model = $this->findModel($id);
         $model->password = "";
-        $oldImage = $model->avatar;
+        $oldImage = $model->image;
         if ($model->load(Yii::$app->request->post())) {
 
             $model->generatePassword($model->password);
 
-            $model->file = UploadedFile::getInstance($model,'avatar');
+            $model->file = UploadedFile::getInstance($model,'image');
             if (!empty($model->file)){
-                $model->avatar = $model->saveAvatarImage();
+                $model->image = $model->saveAvatarImage();
                 $model->deleteOldImage($oldImage);
             }else{
-                $model->avatar = $oldImage;
+                $model->image = $oldImage;
             }
 
             if ($model->save()){
                 return $this->redirect(['index', 'id' => $model->id]);
+            }else{
+                return debug($model->errors);
             }
         }
 
-        $userAvatar = StaticFunctions::getImage('user',$model->id, $model->avatar);
+        $userAvatar = StaticFunction::getImage('user',$model->id, $model->image);
 
         return $this->render('update', [
             'model' => $model,
@@ -145,6 +151,10 @@ class UserController extends DefaultController
         }
 
         throw new NotFoundHttpException('The requested page does not exist.');
+    }
+
+    private function debug(array $errors)
+    {
     }
 
 

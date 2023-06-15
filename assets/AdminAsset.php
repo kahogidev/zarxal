@@ -30,6 +30,7 @@ class AdminAsset extends AssetBundle
             "css/aos.min.css",
             "css/perfect-scrollbar.css",
             "css/metisMenu.min.css",
+            "css/uploadimage.css",
 
 
     ];

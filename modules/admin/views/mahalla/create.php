@@ -9,12 +9,14 @@ $this->title = 'Create Mahalla';
 $this->params['breadcrumbs'][] = ['label' => 'Mahallas', 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 ?>
-<div class="mahalla-create">
-
-    <h1><?= Html::encode($this->title) ?></h1>
+<div class="positions-form">
+    <div class="main-wrapper">
+        <div class="content-body">
 
     <?= $this->render('_form', [
         'model' => $model,
     ]) ?>
 
+        </div>
+    </div>
 </div>

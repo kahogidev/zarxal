@@ -9,12 +9,17 @@ $this->title = 'Create Tasks';
 $this->params['breadcrumbs'][] = ['label' => 'Tasks', 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 ?>
-<div class="tasks-create">
 
-    <h1><?= Html::encode($this->title) ?></h1>
+<div class="positions-form">
+    <div class="main-wrapper">
+        <div class="content-body">
+
 
     <?= $this->render('_form', [
         'model' => $model,
     ]) ?>
 
+        </div>
+    </div>
 </div>
+

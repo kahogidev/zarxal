@@ -9,22 +9,17 @@ use yii\widgets\ActiveForm;
 ?>
 
 <div class="main-wrapper">
-
     <div class="content-body">
-
         <div class="container-fluid">
-
+            <?php $form = ActiveForm::begin(); ?>
             <div class="row">
-                <div class="col-xl-12 col-lg-12">
+                <div class="col-xl-9 col-lg-9">
                     <div class="card">
                         <div class="card-header">
                             <h1><?= Html::encode($this->title) ?></h1>
                         </div>
                         <div class="card-body">
                             <div class="basic-form">
-
-                                <?php $form = ActiveForm::begin(); ?>
-
                                 <div class="row">
                                     <div class="mb-3 col-md-6">
                                         <?= $form->field($model, 'first_name')->textInput(['class'=>'form-control','maxlength' => true]) ?>
@@ -34,9 +29,6 @@ use yii\widgets\ActiveForm;
                                     </div>
                                     <div class="mb-3 col-md-6">
                                         <?= $form->field($model, 'phone')->textInput() ?>
-                                    </div>
-                                    <div class="mb-3 col-md-6">
-                                        <?= $form->field($model, 'telegram')->textInput() ?>
                                     </div>
                                     <div class="mb-3 col-md-6">
                                         <?= $form->field($model, 'telegram')->textInput() ?>
@@ -57,26 +49,36 @@ use yii\widgets\ActiveForm;
                                         <?= $form->field($model, 'creator')->textInput() ?>
                                     </div>
                                     <div class="mb-3 col-md-6">
-                                        <?= $form->field($model, 'image')->textInput(['maxlength' => true]) ?>
-                                    </div>
-                                    <div class="mb-3 col-md-6">
                                         <?= $form->field($model, 'password')->passwordInput(['maxlength' => true]) ?>
                                     </div>
                                     <div class="mb-3 col-md-6">
                                         <?= $form->field($model, 'username')->textInput(['maxlength' => true]) ?>
                                     </div>
 
+
+                                </div>
+
+
                                     <div class="form-group">
                                         <?= Html::submitButton('Save', ['class' => 'btn btn-success']) ?>
                                     </div>
                                 </div>
 
-                                <?php ActiveForm::end(); ?>
+
                             </div>
-                        </div>
+                    </div>
+                </div>
+                <div class="col-xl-3 col-lg-3">
+                    <div class="box">
+                        <div class="js--image-preview" style="background-image: url("<?=$model->getAvatarImage()?>")"></div>
+                    <div class="upload-options">
+                        <label class="btn-primary">
+                            <?= $form->field($model, 'image')->label(false)->fileInput(['accept'=>'image/*', 'class'=>'btn btn-primary image-upload ']) ?>
+                        </label>
                     </div>
                 </div>
             </div>
+            <?php ActiveForm::end(); ?>
         </div>
     </div>
 </div>

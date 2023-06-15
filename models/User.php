@@ -117,7 +117,7 @@ class User extends ActiveRecord implements IdentityInterface
 
     public function getAvatarImage()
     {
-        return "/uploads/user/{$this->id}/$this->avatar";
+        return "/uploads/user/{$this->id}/$this->image";
     }
 
     public function deleteOldImage($image){
