@@ -8,36 +8,109 @@ use yii\widgets\ActiveForm;
 /** @var yii\widgets\ActiveForm $form */
 ?>
 
-<div class="user-form">
+<div class="main-wrapper">
 
-    <?php $form = ActiveForm::begin(); ?>
+    <div class="content-body">
 
-    <?= $form->field($model, 'first_name')->textInput(['maxlength' => true]) ?>
+        <div class="container-fluid">
 
-    <?= $form->field($model, 'last_name')->textInput(['maxlength' => true]) ?>
+            <div class="row">
+                <div class="col-xl-12 col-lg-12">
+                    <div class="card">
+                        <div class="card-header">
+                            <h1><?= Html::encode($this->title) ?></h1>
+                        </div>
+                        <div class="card-body">
+                            <div class="basic-form">
 
-    <?= $form->field($model, 'phone')->textInput() ?>
+                                <?php $form = ActiveForm::begin(); ?>
 
-    <?= $form->field($model, 'telegram')->textInput() ?>
+                                <div class="row">
+                                    <div class="mb-3 col-md-6">
+                                        <?= $form->field($model, 'first_name')->textInput(['class'=>'form-control','maxlength' => true]) ?>
+                                    </div>
+                                    <div class="mb-3 col-md-6">
+                                        <?= $form->field($model, 'last_name')->textInput(['maxlength' => true]) ?>
+                                    </div>
+                                    <div class="mb-3 col-md-6">
+                                        <?= $form->field($model, 'phone')->textInput() ?>
+                                    </div>
+                                    <div class="mb-3 col-md-6">
+                                        <?= $form->field($model, 'telegram')->textInput() ?>
+                                    </div>
+                                    <div class="mb-3 col-md-6">
+                                        <?= $form->field($model, 'telegram')->textInput() ?>
+                                    </div>
+                                    <div class="mb-3 col-md-6">
+                                        <?= $form->field($model, 'telegram')->textInput() ?>
+                                    </div>
+                                    <div class="mb-3 col-md-6">
+                                        <?= $form->field($model, 'position_id')->textInput() ?>
+                                    </div>
+                                    <div class="mb-3 col-md-6">
+                                        <?= $form->field($model, 'mahalla_id')->textInput(['maxlength' => true]) ?>
+                                    </div>
+                                    <div class="mb-3 col-md-6">
+                                        <?= $form->field($model, 'status')->textInput() ?>
+                                    </div>
+                                    <div class="mb-3 col-md-6">
+                                        <?= $form->field($model, 'creator')->textInput() ?>
+                                    </div>
+                                    <div class="mb-3 col-md-6">
+                                        <?= $form->field($model, 'image')->textInput(['maxlength' => true]) ?>
+                                    </div>
+                                    <div class="mb-3 col-md-6">
+                                        <?= $form->field($model, 'password')->passwordInput(['maxlength' => true]) ?>
+                                    </div>
+                                    <div class="mb-3 col-md-6">
+                                        <?= $form->field($model, 'username')->textInput(['maxlength' => true]) ?>
+                                    </div>
 
-    <?= $form->field($model, 'position_id')->textInput() ?>
+                                    <div class="form-group">
+                                        <?= Html::submitButton('Save', ['class' => 'btn btn-success']) ?>
+                                    </div>
+                                </div>
 
-    <?= $form->field($model, 'mahalla_id')->textInput(['maxlength' => true]) ?>
-
-    <?= $form->field($model, 'status')->textInput() ?>
-
-    <?= $form->field($model, 'creator')->textInput() ?>
-
-    <?= $form->field($model, 'image')->textInput(['maxlength' => true]) ?>
-
-    <?= $form->field($model, 'password')->passwordInput(['maxlength' => true]) ?>
-
-    <?= $form->field($model, 'username')->textInput(['maxlength' => true]) ?>
-
-    <div class="form-group">
-        <?= Html::submitButton('Save', ['class' => 'btn btn-success']) ?>
+                                <?php ActiveForm::end(); ?>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
+</div>
 
-    <?php ActiveForm::end(); ?>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 </div>
