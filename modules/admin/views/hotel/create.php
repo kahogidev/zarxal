@@ -9,12 +9,15 @@ $this->title = 'Create Hotel';
 $this->params['breadcrumbs'][] = ['label' => 'Hotels', 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 ?>
-<div class="hotel-create">
 
-    <h1><?= Html::encode($this->title) ?></h1>
+<div class="positions-form">
+    <div class="main-wrapper">
+        <div class="content-body">
 
     <?= $this->render('_form', [
         'model' => $model,
     ]) ?>
-
+        </div>
+    </div>
 </div>
+

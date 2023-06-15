@@ -70,6 +70,10 @@ class TasksController extends DefaultController
         $model = new Tasks();
 
         if ($this->request->isPost) {
+            $model->created_date = date("Y-m-d H:i:s");
+            $model->updated_date = date("Y-m-d H:i:s");
+            $model->begin_date = date("Y-m-d H:i:s");
+            $model->ended_date = date("Y-m-d H:i:s");
             if ($model->load($this->request->post()) && $model->save()) {
                 return $this->redirect(['view', 'id' => $model->id]);
             }
@@ -94,6 +98,7 @@ class TasksController extends DefaultController
         $model = $this->findModel($id);
 
         if ($this->request->isPost && $model->load($this->request->post()) && $model->save()) {
+            $model->updated_date = date("Y-m-d H:i:s");
             return $this->redirect(['view', 'id' => $model->id]);
         }
 

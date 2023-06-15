@@ -8,22 +8,51 @@ use yii\widgets\ActiveForm;
 /** @var yii\widgets\ActiveForm $form */
 ?>
 
-<div class="hotel-form">
-
+<div class="container-fluid">
     <?php $form = ActiveForm::begin(); ?>
-
-    <?= $form->field($model, 'country')->textInput(['maxlength' => true]) ?>
-
-    <?= $form->field($model, 'name')->textInput(['maxlength' => true]) ?>
-
-    <?= $form->field($model, 'images')->textInput(['maxlength' => true]) ?>
-
-    <?= $form->field($model, 'status')->textInput() ?>
-
-    <div class="form-group">
-        <?= Html::submitButton('Save', ['class' => 'btn btn-success']) ?>
+    <div class="row">
+        <div class="col-xl-9 col-lg-9">
+            <div class="card">
+                <div class="card-header">
+                    <h1><?= Html::encode($this->title) ?></h1>
+                </div>
+                <div class="card-body">
+                    <div class="basic-form">
+                        <div class="row">
+                            <div class="mb-3 col-md-6">
+                                <?= $form->field($model, 'country')->textInput(['maxlength' => true]) ?>
+                            </div>
+                            <div class="mb-3 col-md-6">
+                                <?= $form->field($model, 'name')->textInput(['maxlength' => true]) ?>
+                            </div>
+                            <div class="mb-3 col-md-6">
+                                <?= $form->field($model, 'status')->textInput() ?>
+                            </div>
+                            <div class="mb-3 col-md-6">
+                                <div class="upload-options">
+                                    <label class="btn-primary">
+                                        <?= $form->field($model, 'images')->label(false)->fileInput(['accept'=>'image/*', 'class'=>'btn btn-primary image-upload ']) ?>
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <?= Html::submitButton('Save', ['class' => 'btn btn-success']) ?>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--         -->
     </div>
-
     <?php ActiveForm::end(); ?>
 
 </div>
+
+
+
+
+
+
+
+

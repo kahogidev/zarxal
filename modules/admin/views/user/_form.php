@@ -7,10 +7,8 @@ use yii\widgets\ActiveForm;
 /** @var app\models\User $model */
 /** @var yii\widgets\ActiveForm $form */
 ?>
+<div class="container-fluid">
 
-<div class="main-wrapper">
-    <div class="content-body">
-        <div class="container-fluid">
             <?php $form = ActiveForm::begin(); ?>
             <div class="row">
                 <div class="col-xl-9 col-lg-9">
@@ -79,13 +77,11 @@ use yii\widgets\ActiveForm;
                 </div>
             </div>
             <?php ActiveForm::end(); ?>
-        </div>
-    </div>
+
+
+
+
 </div>
-
-
-
-
 
 
 

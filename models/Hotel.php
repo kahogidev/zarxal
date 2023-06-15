@@ -29,7 +29,7 @@ class Hotel extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['country', 'name', 'images'], 'required'],
+            [['country', 'name'], 'required'],
             [['status'], 'integer'],
             [['country', 'name', 'images'], 'string', 'max' => 255],
         ];

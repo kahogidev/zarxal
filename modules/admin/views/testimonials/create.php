@@ -9,12 +9,17 @@ $this->title = 'Create Testimonials';
 $this->params['breadcrumbs'][] = ['label' => 'Testimonials', 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 ?>
-<div class="testimonials-create">
 
-    <h1><?= Html::encode($this->title) ?></h1>
+
+<div class="positions-form">
+    <div class="main-wrapper">
+        <div class="content-body">
 
     <?= $this->render('_form', [
         'model' => $model,
     ]) ?>
 
+        </div>
+    </div>
 </div>
+
