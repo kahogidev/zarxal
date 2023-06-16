@@ -37,17 +37,24 @@ $this->params['breadcrumbs'][] = $this->title;
             ['class' => 'yii\grid\SerialColumn'],
 
             'id',
+            [
+                'attribute' => 'image',
+                'value' => function($data){
+                    return "<img src='{$data->getAvatarImage()}' style='max-width: 70px;;max-height:100px;border-radius:50%;'>";
+                },
+                'format' => 'html'
+            ],
             'first_name',
-            'last_name',
-            'phone',
-            'telegram',
+            'user_name',
+            'status',
+//            'last_name',
+//            'phone',
+//            'telegram',
             //'position_id',
             //'mahalla_id',
-            //'status',
             //'creator',
-            //'image',
             //'password',
-            //'user_name',
+
             [
                 'class' => 'yii\grid\ActionColumn',
                 'header' => 'Amallar',

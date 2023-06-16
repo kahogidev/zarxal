@@ -137,6 +137,9 @@ class HotelController extends DefaultController
 
         return $this->redirect(['index']);
     }
+
+
+
     protected function findModel($id)
     {
         if (($model = Hotel::findOne(['id' => $id])) !== null) {

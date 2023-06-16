@@ -28,7 +28,7 @@ class Tourscategory extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['name', 'images'], 'required'],
+            [['name'], 'required'],
             [['status'], 'integer'],
             [['name', 'images'], 'string', 'max' => 255],
         ];

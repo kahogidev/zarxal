@@ -8,34 +8,71 @@ use yii\widgets\ActiveForm;
 /** @var yii\widgets\ActiveForm $form */
 ?>
 
-<div class="tours-form">
+<div class="container-fluid">
 
     <?php $form = ActiveForm::begin(); ?>
+          <div class="row">
+        <div class="col-xl-9 col-lg-9">
+            <div class="card">
+                <div class="card-header">
+                    <h1><?= Html::encode($this->title) ?></h1>
+                </div>
+                <div class="card-body">
+                    <div class="basic-form">
+                        <div class="row">
+                            <div class="mb-3 col-md-6">
+                                <?= $form->field($model, 'title')->textInput(['maxlength' => true]) ?>
+                            </div>
+                            <div class="mb-3 col-md-6">
+                                <?= $form->field($model, 'description')->textInput(['maxlength' => true]) ?>
+                            </div>
+                            <div class="mb-3 col-md-6">
+                                <?= $form->field($model, 'category_id')->textInput() ?>
+                            </div>
+                            <div class="mb-3 col-md-6">
+                                <?= $form->field($model, 'body')->textarea(['rows' => 6]) ?>
+                            </div>
+                            <div class="mb-3 col-md-6">
+                                <?= $form->field($model, 'created_date')->textInput() ?>
+                            </div>
+                            <div class="mb-3 col-md-6">
+                                <?= $form->field($model, 'updated_date')->textInput() ?>
+                            </div>
+                            <div class="mb-3 col-md-6">
+                                <?= $form->field($model, 'price')->textInput() ?>
+                            </div>
+                            <div class="mb-3 col-md-6">
+                                <?= $form->field($model, 'period')->textInput(['maxlength' => true]) ?>
+                            </div>
+                            <div class="mb-3 col-md-6">
+                                <?= $form->field($model, 'status')->textInput() ?>
+                            </div>
+                            <div class="mb-3 col-md-6">
+                                <div class="upload-options">
+                                    <label class="btn-dark">
+                                        <?= $form->field($model, 'images')->label(false)->fileInput(['accept'=>'image/*', 'class'=>'btn btn-primary image-upload ']) ?>
+                                    </label>
+                                </div>
+                            </div>
 
-    <?= $form->field($model, 'title')->textInput(['maxlength' => true]) ?>
+                        </div>
 
-    <?= $form->field($model, 'description')->textInput(['maxlength' => true]) ?>
 
-    <?= $form->field($model, 'category_id')->textInput() ?>
+                        <div class="form-group">
+                            <?= Html::submitButton('Save', ['class' => 'btn btn-success']) ?>
+                        </div>
+                    </div>
 
-    <?= $form->field($model, 'body')->textarea(['rows' => 6]) ?>
 
-    <?= $form->field($model, 'created_date')->textInput() ?>
+                </div>
+            </div>
+        </div>
 
-    <?= $form->field($model, 'updated_date')->textInput() ?>
-
-    <?= $form->field($model, 'images')->textInput(['maxlength' => true]) ?>
-
-    <?= $form->field($model, 'price')->textInput() ?>
-
-    <?= $form->field($model, 'period')->textInput(['maxlength' => true]) ?>
-
-    <?= $form->field($model, 'status')->textInput() ?>
-
-    <div class="form-group">
-        <?= Html::submitButton('Save', ['class' => 'btn btn-success']) ?>
     </div>
-
     <?php ActiveForm::end(); ?>
 
 </div>
+
+
+
+

@@ -39,9 +39,17 @@ $this->params['breadcrumbs'][] = $this->title;
             ['class' => 'yii\grid\SerialColumn'],
 
             'id',
+            [ 'attribute' =>'images',
+                'value' => function($data){
+                    $image = \app\models\StaticFunctions::getImage('hotel',$data->id, $data->images);
+                    return "<img class='border-radius-10' src='$image' style='max-width: 100px;max-height:100px'>";
+                },
+                'format' => 'html'
+
+            ],
             'country',
             'name',
-            'images',
+
             'status',
             [
                 'class' => 'yii\grid\ActionColumn',

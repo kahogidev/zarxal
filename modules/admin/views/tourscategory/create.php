@@ -5,16 +5,22 @@ use yii\helpers\Html;
 /** @var yii\web\View $this */
 /** @var app\models\Tourscategory $model */
 
-$this->title = 'Create Tourscategory';
+$this->title = 'Tour paketlar yaratish';
 $this->params['breadcrumbs'][] = ['label' => 'Tourscategories', 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 ?>
-<div class="tourscategory-create">
 
-    <h1><?= Html::encode($this->title) ?></h1>
+<div class="positions-form">
+    <div class="main-wrapper">
+        <div class="content-body">
+
 
     <?= $this->render('_form', [
         'model' => $model,
     ]) ?>
 
+        </div>
+    </div>
 </div>
+
+

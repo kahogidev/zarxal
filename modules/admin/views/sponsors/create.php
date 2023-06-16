@@ -9,12 +9,16 @@ $this->title = 'Create Sponsors';
 $this->params['breadcrumbs'][] = ['label' => 'Sponsors', 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 ?>
-<div class="sponsors-create">
 
-    <h1><?= Html::encode($this->title) ?></h1>
+
+<div class="positions-form">
+    <div class="main-wrapper">
+        <div class="content-body">
 
     <?= $this->render('_form', [
         'model' => $model,
     ]) ?>
-
+        </div>
+    </div>
 </div>
+

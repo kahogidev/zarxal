@@ -34,7 +34,7 @@ use yii\widgets\ActiveForm;
                             </div>
                             <div class="mb-3 col-md-6">
                                 <div class="upload-options">
-                                    <label class="btn-primary">
+                                    <label class="btn-dark">
                                         <?= $form->field($model, 'images')->label(false)->fileInput(['accept'=>'image/*', 'class'=>'btn btn-primary image-upload ']) ?>
                                     </label>
                                 </div>
