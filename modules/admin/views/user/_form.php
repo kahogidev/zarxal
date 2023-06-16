@@ -32,9 +32,6 @@ use yii\widgets\ActiveForm;
                                         <?= $form->field($model, 'telegram')->textInput() ?>
                                     </div>
                                     <div class="mb-3 col-md-6">
-                                        <?= $form->field($model, 'telegram')->textInput() ?>
-                                    </div>
-                                    <div class="mb-3 col-md-6">
                                         <?= $form->field($model, 'position_id')->textInput() ?>
                                     </div>
                                     <div class="mb-3 col-md-6">

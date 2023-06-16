@@ -1,16 +1,16 @@
 <?php
 
-use app\models\Testimonials;
+use app\models\Clients;
 use yii\helpers\Html;
 use yii\helpers\Url;
 use yii\grid\ActionColumn;
 use yii\grid\GridView;
 
 /** @var yii\web\View $this */
-/** @var app\models\TestimonialsSearch $searchModel */
+/** @var app\models\ClientsSearch $searchModel */
 /** @var yii\data\ActiveDataProvider $dataProvider */
 
-$this->title = 'Testimonials';
+$this->title = 'Mijozlar';
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="col-xl-12">
@@ -24,7 +24,7 @@ $this->params['breadcrumbs'][] = $this->title;
             </div>
             <ul class="nav nav-tabs dzm-tabs" id="myTab-1" role="tablist">
                 <li class="nav-item" role="presentation">
-                    <button   class=" btn btn-secondary" ><?= Html::a('Create Testimonials', ['create'],['style' =>'color:white;font-weight:bold']) ?></button>
+                    <button   class=" btn btn-secondary" ><?= Html::a('Yangi mijoz yaratish', ['create'],['style' =>'color:white;font-weight:bold']) ?></button>
                 </li>
 
             </ul>
@@ -39,18 +39,17 @@ $this->params['breadcrumbs'][] = $this->title;
             ['class' => 'yii\grid\SerialColumn'],
 
             'id',
-            [ 'attribute' =>'images',
-                'value' => function($data){
-                    $image = \app\models\StaticFunctions::getImage('testimonials',$data->id, $data->images);
-                    return "<img class='border-radius-10' src='$image' style='max-width: 100px;max-height:100px'>";
-                },
-                'format' => 'html'
-
-            ],
-            'name',
-//            'email:email',
-            'comment:ntext',
-
+            'client_lastname',
+            'client_firstname',
+            'client_passport_series',
+            'client_passport_number',
+            //'client_phone',
+            //'tour_id',
+            //'sum_pay',
+            //'sum_cash',
+            //'sum_credit',
+            //'created_at',
+            //'updated_at',
             //'status',
             [
                 'class' => 'yii\grid\ActionColumn',
@@ -75,5 +74,5 @@ BUTTONS;
         ],
     ]); ?>
 
-    </div>
+
 </div>
