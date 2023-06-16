@@ -17,13 +17,13 @@ use yii\widgets\ActiveForm;
 
     <?= $form->field($model, 'id') ?>
 
-    <?= $form->field($model, 'created_date') ?>
+    <?= $form->field($model, 'created_at') ?>
 
-    <?= $form->field($model, 'updated_date') ?>
+    <?= $form->field($model, 'updated_at') ?>
 
-    <?= $form->field($model, 'begin_date') ?>
+    <?= $form->field($model, 'begin_at') ?>
 
-    <?= $form->field($model, 'ended_date') ?>
+    <?= $form->field($model, 'ended_at') ?>
 
     <?php // echo $form->field($model, 'employee_id') ?>
 

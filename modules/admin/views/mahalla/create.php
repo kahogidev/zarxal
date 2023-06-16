@@ -5,7 +5,7 @@ use yii\helpers\Html;
 /** @var yii\web\View $this */
 /** @var app\models\Mahalla $model */
 
-$this->title = 'Create Mahalla';
+$this->title = 'Yangi Mahalla Yaratish';
 $this->params['breadcrumbs'][] = ['label' => 'Mahallas', 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 ?>

@@ -10,7 +10,7 @@ use yii\grid\GridView;
 /** @var app\models\TasksSearch $searchModel */
 /** @var yii\data\ActiveDataProvider $dataProvider */
 
-$this->title = 'Tasks';
+$this->title = 'Topshiriqlar';
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="col-xl-12">
@@ -39,10 +39,10 @@ $this->params['breadcrumbs'][] = $this->title;
             ['class' => 'yii\grid\SerialColumn'],
 
             'id',
-            'created_date',
-            'updated_date',
-            'begin_date',
-            'ended_date',
+            'created_at',
+            'updated_at',
+            'begin_at',
+            'ended_at',
             //'employee_id',
             //'task_name',
             //'status',

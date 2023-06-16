@@ -19,16 +19,16 @@ use yii\widgets\ActiveForm;
                     <div class="basic-form">
                         <div class="row">
                             <div class="mb-3 col-md-6">
-                                <?= $form->field($model, 'created_date')->textInput() ?>
+                                <?= $form->field($model, 'created_at')->textInput() ?>
                             </div>
                             <div class="mb-3 col-md-6">
-                                <?= $form->field($model, 'updated_date')->textInput() ?>
+                                <?= $form->field($model, 'updated_at')->textInput() ?>
                             </div>
                             <div class="mb-3 col-md-6">
-                                <?= $form->field($model, 'begin_date')->textInput() ?>
+                                <?= $form->field($model, 'begin_at')->textInput() ?>
                             </div>
                             <div class="mb-3 col-md-6">
-                                <?= $form->field($model, 'ended_date')->textInput() ?>
+                                <?= $form->field($model, 'ended_at')->textInput() ?>
                             </div>
                             <div class="mb-3 col-md-6">
                                 <?= $form->field($model, 'employee_id')->textInput() ?>

@@ -18,7 +18,7 @@ class TasksSearch extends Tasks
     {
         return [
             [['id', 'employee_id', 'status'], 'integer'],
-            [['created_date', 'updated_date', 'begin_date', 'ended_date', 'task_name'], 'safe'],
+            [['created_date', 'updated_at', 'begin_at', 'ended_at', 'task_name'], 'safe'],
         ];
     }
 
@@ -59,10 +59,10 @@ class TasksSearch extends Tasks
         // grid filtering conditions
         $query->andFilterWhere([
             'id' => $this->id,
-            'created_date' => $this->created_date,
-            'updated_date' => $this->updated_date,
-            'begin_date' => $this->begin_date,
-            'ended_date' => $this->ended_date,
+            'created_at' => $this->created_at,
+            'updated_at' => $this->updated_at,
+            'begin_at' => $this->begin_at,
+            'ended_at' => $this->ended_at,
             'employee_id' => $this->employee_id,
             'status' => $this->status,
         ]);
