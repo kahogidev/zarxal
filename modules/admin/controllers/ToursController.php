@@ -2,11 +2,14 @@
 
 namespace app\modules\admin\controllers;
 
+use app\models\StaticFunctions;
+use app\models\Testimonials;
 use app\models\Tours;
 use app\models\ToursSearch;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
+use yii\web\UploadedFile;
 
 /**
  * ToursController implements the CRUD actions for Tours model.
@@ -16,20 +19,20 @@ class ToursController extends DefaultController
     /**
      * @inheritDoc
      */
-    public function behaviors()
-    {
-        return array_merge(
-            parent::behaviors(),
-            [
-                'verbs' => [
-                    'class' => VerbFilter::className(),
-                    'actions' => [
-                        'delete' => ['POST'],
-                    ],
-                ],
-            ]
-        );
-    }
+//    public function behaviors()
+//    {
+//        return array_merge(
+//            parent::behaviors(),
+//            [
+//                'verbs' => [
+//                    'class' => VerbFilter::className(),
+//                    'actions' => [
+//                        'delete' => ['POST'],
+//                    ],
+//                ],
+//            ]
+//        );
+//    }
 
     /**
      * Lists all Tours models.
@@ -60,18 +63,29 @@ class ToursController extends DefaultController
         ]);
     }
 
-    /**
-     * Creates a new Tours model.
-     * If creation is successful, the browser will be redirected to the 'view' page.
-     * @return string|\yii\web\Response
-     */
     public function actionCreate()
     {
         $model = new Tours();
 
         if ($this->request->isPost) {
-            if ($model->load($this->request->post()) && $model->save()) {
-                return $this->redirect(['view', 'id' => $model->id]);
+            if (!empty(!$model->status)){
+                $model->status = 1;
+            }else{
+                $model->status = 0;
+            }
+
+            if ($model->load($this->request->post())) {
+                if ($model->save()) {
+
+                    $model->images = UploadedFile::getInstance($model,'images');
+                    $model->images = StaticFunctions::saveImage('tours',$model->id,$model->images);
+
+                    $model->save();
+
+                    return $this->redirect(['index', 'id' => $model->id]);
+                }else{
+                    $this->debug($model->errors);die;
+                }
             }
         } else {
             $model->loadDefaultValues();
@@ -82,19 +96,33 @@ class ToursController extends DefaultController
         ]);
     }
 
-    /**
-     * Updates an existing Tours model.
-     * If update is successful, the browser will be redirected to the 'view' page.
-     * @param int $id ID
-     * @return string|\yii\web\Response
-     * @throws NotFoundHttpException if the model cannot be found
-     */
+
     public function actionUpdate($id)
     {
         $model = $this->findModel($id);
+        $oldImage = $model->images;
 
-        if ($this->request->isPost && $model->load($this->request->post()) && $model->save()) {
-            return $this->redirect(['view', 'id' => $model->id]);
+        if ($this->request->isPost && $model->load($this->request->post())) {
+            if (!empty(!$model->status)){
+                $model->status = 1;
+            }else{
+                $model->status = 0;
+            }
+
+            $model->images = UploadedFile::getInstance($model,'images');
+
+            if (!empty($model->images)){
+                $model->images = StaticFunctions::saveImage('tours',$model->id,$model->images);
+                StaticFunctions::deleteImage('tours',$model,$oldImage);
+            }else{
+                $model->images = $oldImage;
+            }
+
+            if ($model->save()){
+                return $this->redirect(['index', 'id' => $model->id]);
+            }else{
+                debug($model->errors);die;
+            }
         }
 
         return $this->render('update', [
@@ -102,13 +130,7 @@ class ToursController extends DefaultController
         ]);
     }
 
-    /**
-     * Deletes an existing Tours model.
-     * If deletion is successful, the browser will be redirected to the 'index' page.
-     * @param int $id ID
-     * @return \yii\web\Response
-     * @throws NotFoundHttpException if the model cannot be found
-     */
+
     public function actionDelete($id)
     {
         $this->findModel($id)->delete();
@@ -116,13 +138,8 @@ class ToursController extends DefaultController
         return $this->redirect(['index']);
     }
 
-    /**
-     * Finds the Tours model based on its primary key value.
-     * If the model is not found, a 404 HTTP exception will be thrown.
-     * @param int $id ID
-     * @return Tours the loaded model
-     * @throws NotFoundHttpException if the model cannot be found
-     */
+
+
     protected function findModel($id)
     {
         if (($model = Tours::findOne(['id' => $id])) !== null) {

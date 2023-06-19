@@ -3,6 +3,7 @@
 namespace app\models;
 
 use Yii;
+use yii\behaviors\TimestampBehavior;
 
 /**
  * This is the model class for table "tours".
@@ -29,16 +30,24 @@ class Tours extends \yii\db\ActiveRecord
         return 'tours';
     }
 
+    public function behaviors()
+    {
+        return [
+            TimestampBehavior::class,
+//            BlameableBehavior::class
+        ];
+    }
+
     /**
      * {@inheritdoc}
      */
     public function rules()
     {
         return [
-            [['title', 'category_id', 'created_date', 'updated_date'], 'required'],
+            [['title', 'category_id', ], 'required'],
             [['category_id', 'price', 'status'], 'integer'],
             [['body'], 'string'],
-            [['created_date', 'updated_date'], 'safe'],
+            [['created_at', 'updated_at'], 'safe'],
             [['title', 'description', 'images', 'period'], 'string', 'max' => 255],
         ];
     }
@@ -51,14 +60,14 @@ class Tours extends \yii\db\ActiveRecord
         return [
             'id' => 'ID',
             'title' => 'Title',
-            'description' => 'Description',
+            'description' => "Ta'rif",
             'category_id' => 'Category ID',
             'body' => 'Body',
-            'created_date' => 'Created Date',
-            'updated_date' => 'Updated Date',
-            'images' => 'Images',
-            'price' => 'Price',
-            'period' => 'Period',
+            'created_at' => 'Created at',
+            'updated_at' => 'Updated at',
+            'images' => 'Rasm',
+            'price' => 'Narx',
+            'period' => 'Muddat',
             'status' => 'Status',
         ];
     }

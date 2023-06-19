@@ -33,17 +33,17 @@ class User extends ActiveRecord implements IdentityInterface
     {
         return [
             'id' => 'ID',
-            'first_name' => 'First Name',
-            'last_name' => 'Last Name',
-            'phone' => 'Phone',
+            'first_name' => 'Ism',
+            'last_name' => 'Familiya',
+            'phone' => 'Telefon nomer',
             'telegram' => 'Telegram',
             'position_id' => 'Position ID',
             'mahalla_id' => 'Mahalla ID',
             'status' => 'Status',
-            'creator' => 'Creator',
-            'image' => 'Image',
-            'password' => 'Password',
-            'username' => 'User Name',
+            'creator' => 'Yaratuvchi',
+            'image' => 'Rasm',
+            'password' => 'Parol',
+            'username' => 'Xodim akkaunti',
         ];
     }
 

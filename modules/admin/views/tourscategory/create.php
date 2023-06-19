@@ -5,7 +5,7 @@ use yii\helpers\Html;
 /** @var yii\web\View $this */
 /** @var app\models\Tourscategory $model */
 
-$this->title = 'Tour paketlar yaratish';
+$this->title = 'Tour paket kategoriya yaratish ';
 $this->params['breadcrumbs'][] = ['label' => 'Tourscategories', 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 ?>

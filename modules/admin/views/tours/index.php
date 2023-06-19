@@ -10,7 +10,7 @@ use yii\grid\GridView;
 /** @var app\models\ToursSearch $searchModel */
 /** @var yii\data\ActiveDataProvider $dataProvider */
 
-$this->title = 'Tours';
+$this->title = 'Tourlar';
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="col-xl-12">
@@ -24,7 +24,7 @@ $this->params['breadcrumbs'][] = $this->title;
             </div>
             <ul class="nav nav-tabs dzm-tabs" id="myTab-1" role="tablist">
                 <li class="nav-item" role="presentation">
-                    <button   class=" btn btn-secondary" ><?= Html::a('Create Tours', ['create'],['style' =>'color:white;font-weight:bold']) ?></button>
+                    <button   class=" btn btn-secondary" ><?= Html::a('Yangi tour yaratish', ['create'],['style' =>'color:white;font-weight:bold']) ?></button>
                 </li>
 
             </ul>
@@ -41,12 +41,19 @@ $this->params['breadcrumbs'][] = $this->title;
 
             'id',
             'title',
-            'description',
+//            'description',
             'category_id',
-            'body:ntext',
-            //'created_date',
-            //'updated_date',
-            //'images',
+//            'body:ntext',
+            'created_at:datetime',
+            //'updated_at',
+            [ 'attribute' =>'images',
+                'value' => function($data){
+                    $image = \app\models\StaticFunctions::getImage('tours',$data->id, $data->images);
+                    return "<img class='border-radius-10' src='$image' style='max-width: 100px;max-height:100px'>";
+                },
+                'format' => 'html'
+
+            ],
             //'price',
             //'period',
             //'status',

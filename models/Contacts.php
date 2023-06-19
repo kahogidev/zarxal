@@ -47,15 +47,15 @@ class Contacts extends \yii\db\ActiveRecord
     {
         return [
             'id' => 'ID',
-            'addres' => 'Addres',
+            'addres' => 'Manzil',
             'email' => 'Email',
-            'first_phone' => 'First Phone',
-            'second_phone' => 'Second Phone',
-            'third_phone' => 'Third Phone',
+            'first_phone' => 'Telefon raqam',
+            'second_phone' => "Qo'shimcha telefon",
+            'third_phone' => "Qo'shimcha telefon",
             'telegram_link' => 'Telegram Link',
             'instagram_link' => 'Instagram Link',
             'facebook_link' => 'Facebook Link',
-            'tweetter_link' => 'Tweetter Link',
+            'tweetter_link' => 'Twetter Link',
         ];
     }
 }

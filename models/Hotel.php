@@ -42,9 +42,9 @@ class Hotel extends \yii\db\ActiveRecord
     {
         return [
             'id' => 'ID',
-            'country' => 'Country',
-            'name' => 'Name',
-            'images' => 'Images',
+            'country' => 'Mamlakat',
+            'name' => 'Nomi',
+            'images' => 'Rasm',
             'status' => 'Status',
         ];
     }

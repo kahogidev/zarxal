@@ -10,7 +10,7 @@ use yii\grid\GridView;
 /** @var app\models\ContactsSearch $searchModel */
 /** @var yii\data\ActiveDataProvider $dataProvider */
 
-$this->title = 'Contacts';
+$this->title = 'Kontaktlar';
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="col-xl-12">
@@ -24,7 +24,7 @@ $this->params['breadcrumbs'][] = $this->title;
             </div>
             <ul class="nav nav-tabs dzm-tabs" id="myTab-1" role="tablist">
                 <li class="nav-item" role="presentation">
-                    <button   class=" btn btn-secondary" ><?= Html::a('Create Contacts', ['create'],['style' =>'color:white;font-weight:bold']) ?></button>
+                    <button   class=" btn btn-secondary" ><?= Html::a('Kontakt yaratish', ['create'],['style' =>'color:white;font-weight:bold']) ?></button>
                 </li>
 
             </ul>
@@ -42,7 +42,7 @@ $this->params['breadcrumbs'][] = $this->title;
             'addres:ntext',
             'email:email',
             'first_phone',
-            'second_phone',
+//            'second_phone',
             //'third_phone',
             //'telegram_link',
             //'instagram_link',

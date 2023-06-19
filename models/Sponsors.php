@@ -42,9 +42,9 @@ class Sponsors extends \yii\db\ActiveRecord
     {
         return [
             'id' => 'ID',
-            'name' => 'Name',
+            'name' => 'Nomi',
             'link' => 'Link',
-            'images' => 'Images',
+            'images' => 'Rasm',
             'status' => 'Status',
         ];
     }

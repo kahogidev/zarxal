@@ -32,12 +32,12 @@ use yii\widgets\ActiveForm;
                             <div class="mb-3 col-md-6">
                                 <?= $form->field($model, 'body')->textarea(['rows' => 6]) ?>
                             </div>
-                            <div class="mb-3 col-md-6">
-                                <?= $form->field($model, 'created_date')->textInput() ?>
-                            </div>
-                            <div class="mb-3 col-md-6">
-                                <?= $form->field($model, 'updated_date')->textInput() ?>
-                            </div>
+<!--                            <div class="mb-3 col-md-6">-->
+<!--                                --><?//= $form->field($model, 'created_at')->textInput() ?>
+<!--                            </div>-->
+<!--                            <div class="mb-3 col-md-6">-->
+<!--                                --><?//= $form->field($model, 'updated_at')->textInput() ?>
+<!--                            </div>-->
                             <div class="mb-3 col-md-6">
                                 <?= $form->field($model, 'price')->textInput() ?>
                             </div>
@@ -59,7 +59,7 @@ use yii\widgets\ActiveForm;
 
 
                         <div class="form-group">
-                            <?= Html::submitButton('Save', ['class' => 'btn btn-success']) ?>
+                            <?= Html::submitButton('Saqlash', ['class' => 'btn btn-dark']) ?>
                         </div>
                     </div>
 

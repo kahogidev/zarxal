@@ -41,8 +41,8 @@ class Tourscategory extends \yii\db\ActiveRecord
     {
         return [
             'id' => 'ID',
-            'name' => 'Name',
-            'images' => 'Images',
+            'name' => 'Kategoriya nomi',
+            'images' => 'Rasm',
             'status' => 'Status',
         ];
     }

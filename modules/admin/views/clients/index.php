@@ -17,7 +17,7 @@ $this->params['breadcrumbs'][] = $this->title;
     <div class="card dz-card" id="bootstrap-table2">
 
 
-        <div class="card-header flex-wrap d-flex justify-content-between  border-0">
+        <div class="card-header flex-wrap d-flex justify-content-between  border-0 margin">
             <div>
                 <p class="card-title" style="font-size: 50px"><?= Html::encode($this->title) ?></p>
 
@@ -41,16 +41,16 @@ $this->params['breadcrumbs'][] = $this->title;
             'id',
             'client_lastname',
             'client_firstname',
-            'client_passport_series',
-            'client_passport_number',
+//            'client_passport_series',
+//            'client_passport_number',
             //'client_phone',
             //'tour_id',
             //'sum_pay',
             //'sum_cash',
             //'sum_credit',
-            'created_at',
+            'created_at:datetime',
             //'updated_at',
-            //'status',
+            'status',
             [
                 'class' => 'yii\grid\ActionColumn',
                 'header' => 'Amallar',

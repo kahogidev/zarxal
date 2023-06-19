@@ -10,7 +10,7 @@ use yii\grid\GridView;
 /** @var app\models\TestimonialsSearch $searchModel */
 /** @var yii\data\ActiveDataProvider $dataProvider */
 
-$this->title = 'Testimonials';
+$this->title = 'Fikrlar';
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="col-xl-12">
@@ -24,7 +24,7 @@ $this->params['breadcrumbs'][] = $this->title;
             </div>
             <ul class="nav nav-tabs dzm-tabs" id="myTab-1" role="tablist">
                 <li class="nav-item" role="presentation">
-                    <button   class=" btn btn-secondary" ><?= Html::a('Create Testimonials', ['create'],['style' =>'color:white;font-weight:bold']) ?></button>
+                    <button   class=" btn btn-secondary" ><?= Html::a("Fikrlar qo'shish", ['create'],['style' =>'color:white;font-weight:bold']) ?></button>
                 </li>
 
             </ul>

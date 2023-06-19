@@ -18,7 +18,7 @@ class ToursSearch extends Tours
     {
         return [
             [['id', 'category_id', 'price', 'status'], 'integer'],
-            [['title', 'description', 'body', 'created_date', 'updated_date', 'images', 'period'], 'safe'],
+            [['title', 'description', 'body', 'created_at', 'updated_at', 'images', 'period'], 'safe'],
         ];
     }
 
@@ -60,8 +60,8 @@ class ToursSearch extends Tours
         $query->andFilterWhere([
             'id' => $this->id,
             'category_id' => $this->category_id,
-            'created_date' => $this->created_date,
-            'updated_date' => $this->updated_date,
+            'created_at' => $this->created_at,
+            'updated_at' => $this->updated_at,
             'price' => $this->price,
             'status' => $this->status,
         ]);

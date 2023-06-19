@@ -40,8 +40,8 @@ class Faq extends \yii\db\ActiveRecord
     {
         return [
             'id' => 'ID',
-            'question' => 'Question',
-            'answer' => 'Answer',
+            'question' => 'Savollar',
+            'answer' => 'Javoblar',
             'status' => 'Status',
         ];
     }

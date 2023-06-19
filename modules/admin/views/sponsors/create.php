@@ -5,7 +5,7 @@ use yii\helpers\Html;
 /** @var yii\web\View $this */
 /** @var app\models\Sponsors $model */
 
-$this->title = 'Create Sponsors';
+$this->title = 'Hamkorlar yaratish';
 $this->params['breadcrumbs'][] = ['label' => 'Sponsors', 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 ?>

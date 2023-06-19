@@ -59,16 +59,16 @@ class Clients extends \yii\db\ActiveRecord
     {
         return [
             'id' => 'ID',
-            'client_lastname' => 'Client Lastname',
-            'client_firstname' => 'Client Firstname',
-            'client_passport_series' => 'Client Passport Series',
-            'client_passport_number' => 'Client Passport Number',
-            'client_phone' => 'Client Phone',
+            'client_lastname' => 'Familiya',
+            'client_firstname' => 'Ism',
+            'client_passport_series' => 'Passport Seriya',
+            'client_passport_number' => 'Passport Nomer',
+            'client_phone' => 'Telefon raqam',
             'tour_id' => 'Tour ID',
             'sum_pay' => 'Sum Pay',
             'sum_cash' => 'Sum Cash',
             'sum_credit' => 'Sum Credit',
-            'created_at' => 'Created At',
+            'created_at' => 'Shartnoma vaqti',
             'updated_at' => 'Updated At',
             'status' => 'Status',
         ];

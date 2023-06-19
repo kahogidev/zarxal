@@ -10,7 +10,7 @@ use yii\grid\GridView;
 /** @var app\models\PositionsSearch $searchModel */
 /** @var yii\data\ActiveDataProvider $dataProvider */
 
-$this->title = 'Positions';
+$this->title = 'Lavozimlar';
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="col-xl-12">
@@ -24,7 +24,7 @@ $this->params['breadcrumbs'][] = $this->title;
             </div>
             <ul class="nav nav-tabs dzm-tabs" id="myTab-1" role="tablist">
                 <li class="nav-item" role="presentation">
-                    <button   class=" btn btn-secondary" ><?= Html::a('Create Positions', ['create'],['style' =>'color:white;font-weight:bold']) ?></button>
+                    <button   class=" btn btn-secondary" ><?= Html::a('Lavozim yaratish', ['create'],['style' =>'color:white;font-weight:bold']) ?></button>
                 </li>
 
             </ul>

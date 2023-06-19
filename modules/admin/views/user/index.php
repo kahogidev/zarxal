@@ -23,7 +23,7 @@ $this->params['breadcrumbs'][] = $this->title;
             </div>
             <ul class="nav nav-tabs dzm-tabs" id="myTab-1" role="tablist">
                 <li class="nav-item" role="presentation">
-                    <button   class=" btn btn-secondary" ><?= Html::a('Create Users', ['create'],['style' =>'color:white;font-weight:bold']) ?></button>
+                    <button   class=" btn btn-secondary" ><?= Html::a("Yangi xodim qo'shish", ['create'],['style' =>'color:white;font-weight:bold']) ?></button>
                 </li>
             </ul>
         </div>
@@ -45,14 +45,14 @@ $this->params['breadcrumbs'][] = $this->title;
                 'format' => 'html'
             ],
             'first_name',
-            'user_name',
+            'creator',
+//            'user_name',
             'status',
 //            'last_name',
 //            'phone',
 //            'telegram',
             //'position_id',
             //'mahalla_id',
-            //'creator',
             //'password',
 
             [
