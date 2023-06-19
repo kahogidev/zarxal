@@ -2,7 +2,10 @@
 
 namespace app\models;
 
+use common\behaviors\ConvertBehaviors;
 use Yii;
+use yii\behaviors\BlameableBehavior;
+use yii\behaviors\TimestampBehavior;
 
 /**
  * This is the model class for table "clients".
@@ -30,14 +33,20 @@ class Clients extends \yii\db\ActiveRecord
     {
         return 'clients';
     }
-
+    public function behaviors()
+    {
+        return [
+            TimestampBehavior::class,
+//            BlameableBehavior::class
+        ];
+    }
     /**
      * {@inheritdoc}
      */
     public function rules()
     {
         return [
-            [['client_lastname', 'client_firstname', 'client_passport_series', 'client_passport_number', 'client_phone', 'tour_id', 'sum_pay', 'sum_cash', 'sum_credit', 'created_at', 'updated_at'], 'required'],
+            [['client_lastname', 'client_firstname', 'client_passport_series', 'client_passport_number', 'client_phone', 'tour_id', 'sum_pay', 'sum_cash', 'sum_credit' ], 'required'],
             [['client_passport_number', 'client_phone', 'tour_id', 'sum_pay', 'sum_cash', 'sum_credit', 'created_at', 'updated_at', 'status'], 'integer'],
             [['client_lastname', 'client_firstname', 'client_passport_series'], 'string', 'max' => 255],
         ];

@@ -48,7 +48,7 @@ $this->params['breadcrumbs'][] = $this->title;
             //'sum_pay',
             //'sum_cash',
             //'sum_credit',
-            //'created_at',
+            'created_at',
             //'updated_at',
             //'status',
             [

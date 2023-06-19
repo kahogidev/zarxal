@@ -48,12 +48,12 @@ use yii\widgets\ActiveForm;
                             <div class="mb-3 col-md-6">
                                 <?= $form->field($model, 'sum_credit')->textInput() ?>
                             </div>
-                            <div class="mb-3 col-md-6">
-                                <?= $form->field($model, 'created_at')->textInput() ?>
-                            </div>
-                            <div class="mb-3 col-md-6">
-                                <?= $form->field($model, 'updated_at')->textInput() ?>
-                            </div>
+<!--                            <div class="mb-3 col-md-6">-->
+<!--                                --><?//= $form->field($model, 'created_at')->textInput() ?>
+<!--                            </div>-->
+<!--                            <div class="mb-3 col-md-6">-->
+<!--                                --><?//= $form->field($model, 'updated_at')->textInput() ?>
+<!--                            </div>-->
                             <div class="mb-3 col-md-6">
                                 <?= $form->field($model, 'status')->textInput() ?>
                             </div>
