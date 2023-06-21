@@ -42,8 +42,8 @@ class TestimonialsController extends DefaultController
     {
         $searchModel = new TestimonialsSearch();
         $dataProvider = $searchModel->search($this->request->queryParams);
-
         return $this->render('index', [
+
             'searchModel' => $searchModel,
             'dataProvider' => $dataProvider,
         ]);
@@ -75,7 +75,6 @@ class TestimonialsController extends DefaultController
 
             if ($model->load($this->request->post())) {
                 if ($model->save()) {
-
                     $model->images = UploadedFile::getInstance($model,'images');
                     $model->images = StaticFunctions::saveImage('testimonials',$model->id,$model->images);
 
