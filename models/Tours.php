@@ -2,6 +2,8 @@
 
 namespace app\models;
 
+use app\models\behaviors\ConvertBehaviors;
+use app\models\behaviors\DateTimeBehavior;
 use Yii;
 use yii\behaviors\TimestampBehavior;
 
@@ -33,9 +35,25 @@ class Tours extends \yii\db\ActiveRecord
     public function behaviors()
     {
         return [
-            TimestampBehavior::class,
-//            BlameableBehavior::class
+
+               'convertBehavior' => [
+                'class' => ConvertBehaviors::class,
+                'attributes' => ['title', 'description','body','period']
+                ],
+
+
+                TimestampBehavior::class,
+                'date_publish_date' => [
+                    'class' => DateTimeBehavior::class,
+                    'attribute' => 'created_at', //атрибут модели, который будем менять
+                    'format' => 'dd.MM.yyyy HH:mm',   //формат вывода даты для пользователя
+//                'default' => 'today'
+                ],
+
+
         ];
+
+
     }
 
     /**
@@ -59,7 +77,7 @@ class Tours extends \yii\db\ActiveRecord
     {
         return [
             'id' => 'ID',
-            'title' => 'Title',
+            'title' => 'Nomi',
             'description' => "Ta'rif",
             'category_id' => 'Category ID',
             'body' => 'Body',

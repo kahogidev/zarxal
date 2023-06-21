@@ -3,6 +3,7 @@
 namespace app\models;
 
 use Yii;
+use yii\behaviors\TimestampBehavior;
 
 /**
  * This is the model class for table "tasks".
@@ -24,6 +25,14 @@ class Tasks extends \yii\db\ActiveRecord
     public static function tableName()
     {
         return 'tasks';
+    }
+
+    public function behaviors()
+    {
+        return [
+            TimestampBehavior::class,
+//            BlameableBehavior::class
+        ];
     }
 
     /**
@@ -55,4 +64,5 @@ class Tasks extends \yii\db\ActiveRecord
             'status' => 'Status',
         ];
     }
+
 }

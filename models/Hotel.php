@@ -2,7 +2,15 @@
 
 namespace app\models;
 
+
+
+
+
+use app\models\behaviors\ConvertBehaviors;
+use app\models\behaviors\DateTimeBehavior;
 use Yii;
+use yii\behaviors\TimestampBehavior;
+
 
 /**
  * This is the model class for table "hotel".
@@ -22,7 +30,15 @@ class Hotel extends \yii\db\ActiveRecord
     {
         return 'hotel';
     }
-
+    public function behaviors()
+    {
+        return [
+            'convertBehavior' => [
+                'class' => ConvertBehaviors::class,
+                'attributes' => ['country', 'name']
+            ],
+        ];
+    }
     /**
      * {@inheritdoc}
      */

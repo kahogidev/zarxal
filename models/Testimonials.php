@@ -2,7 +2,9 @@
 
 namespace app\models;
 
+use app\models\behaviors\ConvertBehaviors;
 use Yii;
+use yii\behaviors\TimestampBehavior;
 
 /**
  * This is the model class for table "testimonials".
@@ -22,6 +24,17 @@ class Testimonials extends \yii\db\ActiveRecord
     public static function tableName()
     {
         return 'testimonials';
+    }
+
+    public function behaviors()
+    {
+        return [
+            'convertBehavior' => [
+                'class' => ConvertBehaviors::class,
+                'attributes' => ['name', 'comment']
+            ],
+
+        ];
     }
 
     /**
@@ -51,4 +64,9 @@ class Testimonials extends \yii\db\ActiveRecord
             'status' => 'Status',
         ];
     }
+
+
+
+
+
 }

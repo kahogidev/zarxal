@@ -2,7 +2,9 @@
 
 namespace app\models;
 
+use app\models\behaviors\ConvertBehaviors;
 use Yii;
+use yii\behaviors\TimestampBehavior;
 
 /**
  * This is the model class for table "tourscategory".
@@ -22,6 +24,16 @@ class Tourscategory extends \yii\db\ActiveRecord
         return 'tourscategory';
     }
 
+    public function behaviors()
+    {
+        return [
+            'convertBehavior' => [
+                'class' => ConvertBehaviors::class,
+                'attributes' => ['name']
+            ],
+
+        ];
+    }
     /**
      * {@inheritdoc}
      */
@@ -46,4 +58,6 @@ class Tourscategory extends \yii\db\ActiveRecord
             'status' => 'Status',
         ];
     }
+
+
 }

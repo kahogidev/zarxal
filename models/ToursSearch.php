@@ -60,8 +60,8 @@ class ToursSearch extends Tours
         $query->andFilterWhere([
             'id' => $this->id,
             'category_id' => $this->category_id,
-            'created_at' => $this->created_at,
-            'updated_at' => $this->updated_at,
+//            'created_at' => $this->created_at,
+//            'updated_at' => $this->updated_at,
             'price' => $this->price,
             'status' => $this->status,
         ]);

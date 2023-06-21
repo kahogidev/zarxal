@@ -2,7 +2,11 @@
 
 namespace app\models;
 
+
+
+use app\models\behaviors\ConvertBehaviors;
 use Yii;
+use yii\behaviors\TimestampBehavior;
 
 /**
  * This is the model class for table "faq".
@@ -20,6 +24,17 @@ class Faq extends \yii\db\ActiveRecord
     public static function tableName()
     {
         return 'faq';
+    }
+
+    public function behaviors()
+    {
+        return [
+            'convertBehavior' => [
+                'class' => ConvertBehaviors::class,
+                'attributes' => ['question', 'answer']
+            ],
+
+        ];
     }
 
     /**
@@ -44,5 +59,9 @@ class Faq extends \yii\db\ActiveRecord
             'answer' => 'Javoblar',
             'status' => 'Status',
         ];
+
     }
+
+
+
 }
