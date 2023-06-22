@@ -53,7 +53,8 @@ $this->params['breadcrumbs'][] = $this->title;
                 [
                     'attribute' => 'comment',
                     'value' => function ($model) {
-                        return $model->comment;
+                        $comment = json_decode($model->comment, true);
+                        return $comment[Yii::$app->language];
                     }
                 ],
 

@@ -80,7 +80,7 @@ class TestimonialsController extends DefaultController
 
                     $model->save();
 
-                    return $this->redirect(['index', 'id' => $model->id]);
+                    return $this->redirect(['index']);
                 }else{
                     $this->debug($model->errors);die;
                 }

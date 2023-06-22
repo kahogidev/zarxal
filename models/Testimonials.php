@@ -4,6 +4,7 @@ namespace app\models;
 
 use app\models\behaviors\ConvertBehaviors;
 use Yii;
+use yii\behaviors\BlameableBehavior;
 use yii\behaviors\TimestampBehavior;
 
 /**
@@ -12,7 +13,7 @@ use yii\behaviors\TimestampBehavior;
  * @property int $id
  * @property string $name
  * @property string $email
- * @property string $comment
+ * @property string|null $comment
  * @property string $images
  * @property int|null $status
  */
@@ -31,9 +32,8 @@ class Testimonials extends \yii\db\ActiveRecord
         return [
             'convertBehavior' => [
                 'class' => ConvertBehaviors::class,
-                'attributes' => ['name', 'comment']
+                'attributes' => ['comment']
             ],
-
         ];
     }
 
@@ -43,8 +43,9 @@ class Testimonials extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['name', 'email'], 'required'],
             [['comment'], 'safe'],
+            [['name', 'email'], 'safe'],
+
             [['status'], 'integer'],
             [['name', 'email', 'images'], 'string', 'max' => 255],
         ];
@@ -64,9 +65,5 @@ class Testimonials extends \yii\db\ActiveRecord
             'status' => 'Status',
         ];
     }
-
-
-
-
 
 }
