@@ -47,7 +47,13 @@ $this->params['breadcrumbs'][] = $this->title;
                 'format' => 'html'
 
             ],
-            'country',
+            [
+                'attribute' => 'country',
+                'value' => function ($model) {
+                    $country = json_decode($model->country, true);
+                    return $country[Yii::$app->language];
+                }
+            ],
             'name',
 
             'status',

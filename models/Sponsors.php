@@ -2,6 +2,7 @@
 
 namespace app\models;
 
+use app\models\behaviors\ConvertBehaviors;
 use Yii;
 
 /**
@@ -23,15 +24,27 @@ class Sponsors extends \yii\db\ActiveRecord
         return 'sponsors';
     }
 
+    public function behaviors()
+    {
+        return [
+            'convertBehavior' => [
+                'class' => ConvertBehaviors::class,
+                'attributes' => ['name']
+            ],
+
+        ];
+    }
+
     /**
      * {@inheritdoc}
      */
     public function rules()
     {
         return [
-            [['name', 'link'], 'required'],
+
+            [['name'], 'safe'],
             [['status'], 'integer'],
-            [['name', 'link', 'images'], 'string', 'max' => 255],
+            [['link', 'images'], 'string', 'max' => 255],
         ];
     }
 

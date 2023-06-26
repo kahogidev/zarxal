@@ -38,14 +38,16 @@ $this->params['breadcrumbs'][] = $this->title;
         'columns' => [
             ['class' => 'yii\grid\SerialColumn'],
 
-            'id',
-            'created_at',
-            'updated_at',
+            'task_name',
+            'status',
+//            'id',
+
+            'created_at:datetime',
+//            'updated_at:datetime',
             'begin_at',
             'ended_at',
             //'employee_id',
-            //'task_name',
-            //'status',
+
             [
                 'class' => 'yii\grid\ActionColumn',
                 'header' => 'Amallar',

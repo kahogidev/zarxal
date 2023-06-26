@@ -19,7 +19,9 @@ use yii\widgets\ActiveForm;
                 <div class="card-header">
                     <h1><?= Html::encode($this->title) ?></h1>
                 </div>
+
                 <div class="card-body">
+
                     <ul class="nav nav-tabs" id="myTab" role="tablist">
                         <?php $languages = ['uz', 'en', 'ru'] ?>
 
@@ -35,6 +37,7 @@ use yii\widgets\ActiveForm;
                             </li>
                         <?php endforeach; ?>
                     </ul>
+
                     <div class="basic-form">
                         <div class="row">
                             <div class="mb-3 col-md-6">
@@ -53,13 +56,8 @@ use yii\widgets\ActiveForm;
                                     <?php endforeach;?>
                                 </div>
 
-
-
-
-
-
-
                             </div>
+
                             <div class="mb-3 col-md-6">
                                 <?= $form->field($model, 'status')->textInput() ?>
                             </div>

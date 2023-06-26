@@ -2,7 +2,9 @@
 
 namespace app\models;
 
+use app\models\behaviors\DateTimeBehavior;
 use Yii;
+use yii\behaviors\BlameableBehavior;
 use yii\behaviors\TimestampBehavior;
 
 /**
@@ -27,11 +29,26 @@ class Tasks extends \yii\db\ActiveRecord
         return 'tasks';
     }
 
+//    public function behaviors()
+//    {
+//        return [
+//
+//            TimestampBehavior::class,
+//            'date_publish_date' => [
+//                'class' => BlameableBehavior::class,
+//                'attribute' => 'begin_at','ended_at', //атрибут модели, который будем менять
+//                'format' => 'dd.MM.yyyy HH:mm',   //формат вывода даты для пользователя
+////                'default' => 'today'
+//            ]
+//        ];
+//    }
+
     public function behaviors()
     {
         return [
             TimestampBehavior::class,
 //            BlameableBehavior::class
+
         ];
     }
 
@@ -41,8 +58,8 @@ class Tasks extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['created_at', 'begin_at', 'ended_at', 'task_name'], 'required'],
-            [['created_at', 'updated_at', 'begin_at', 'ended_at'], 'safe'],
+
+            [['created_at', 'updated_at'], 'integer'],
             [['employee_id', 'status'], 'integer'],
             [['task_name'], 'string', 'max' => 255],
         ];

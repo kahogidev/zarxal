@@ -35,7 +35,7 @@ class Hotel extends \yii\db\ActiveRecord
         return [
             'convertBehavior' => [
                 'class' => ConvertBehaviors::class,
-                'attributes' => ['country', 'name']
+                'attributes' => ['country']
             ],
         ];
     }
@@ -45,9 +45,10 @@ class Hotel extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['country', 'name'], 'required'],
+            [['name'], 'required'],
             [['status'], 'integer'],
-            [['country', 'name', 'images'], 'string', 'max' => 255],
+            [['country', ],'safe'],
+            [['name', 'images'], 'string', 'max' => 255],
         ];
     }
 

@@ -121,7 +121,7 @@ class ToursController extends DefaultController
             if ($model->save()){
                 return $this->redirect(['index', 'id' => $model->id]);
             }else{
-                debug($model->errors);die;
+                $this->debug($model->errors);die;
             }
         }
 
@@ -147,5 +147,9 @@ class ToursController extends DefaultController
         }
 
         throw new NotFoundHttpException('The requested page does not exist.');
+    }
+
+    private function debug(array $errors)
+    {
     }
 }

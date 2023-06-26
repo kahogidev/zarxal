@@ -40,10 +40,28 @@ $this->params['breadcrumbs'][] = $this->title;
             ['class' => 'yii\grid\SerialColumn'],
 
             'id',
-            'title',
-//            'description',
+            [
+                'attribute' => 'title',
+                'value' => function ($model) {
+//                    $title = json_decode($model->title, true);
+                    return $model[Yii::$app->language];
+                }
+            ],
+            [
+                'attribute' => 'description',
+                'value' => function ($model) {
+//                    $description = json_decode($model->description, true);
+                    return $model[Yii::$app->language];
+                }
+            ],
             'category_id',
-//            'body:ntext',
+            [
+                'attribute' => 'body',
+                'value' => function ($model) {
+//                    $body = json_decode($model->body, true);
+                    return $model[Yii::$app->language];
+                }
+            ],
             'created_at:datetime',
             //'updated_at',
             [ 'attribute' =>'images',

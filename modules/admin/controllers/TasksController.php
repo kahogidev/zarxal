@@ -69,10 +69,15 @@ class TasksController extends DefaultController
     {
         $model = new Tasks();
 
+
         if ($this->request->isPost) {
+            $model->begin_at = \Yii::$app->formatter->asInteger($model->begin_at, 'medium');
+            $model->ended_at = \Yii::$app->formatter->asInteger($model->ended_at, 'medium');
 
             if ($model->load($this->request->post()) && $model->save()) {
-                return $this->redirect(['view', 'id' => $model->id]);
+
+                return $this->redirect(['index']);
+
             }
         } else {
             $model->loadDefaultValues();

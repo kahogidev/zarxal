@@ -18,24 +18,30 @@ use yii\widgets\ActiveForm;
                 <div class="card-body">
                     <div class="basic-form">
                         <div class="row">
+<!--                            <div class="mb-3 col-md-6">-->
+<!--                                --><?//= $form->field($model, 'created_at')->textInput() ?>
+<!--                            </div>-->
+<!--                            <div class="mb-3 col-md-6">-->
+<!--                                --><?//= $form->field($model, 'updated_at')->textInput() ?>
+<!--                            </div>-->
                             <div class="mb-3 col-md-6">
-                                <?= $form->field($model, 'created_at')->textInput() ?>
+                                <?= $form->field($model, 'task_name')->textInput(['maxlength' => true]) ?>
                             </div>
                             <div class="mb-3 col-md-6">
-                                <?= $form->field($model, 'updated_at')->textInput() ?>
+                                <?= $form->field($model, 'begin_at')->Input('date')?>
                             </div>
                             <div class="mb-3 col-md-6">
-                                <?= $form->field($model, 'begin_at')->textInput() ?>
-                            </div>
-                            <div class="mb-3 col-md-6">
-                                <?= $form->field($model, 'ended_at')->textInput() ?>
+                                <?= $form->field($model, 'ended_at')->Input('date') ?>
                             </div>
                             <div class="mb-3 col-md-6">
                                 <?= $form->field($model, 'employee_id')->textInput() ?>
                             </div>
+                            <div class="mb-3 col-md-6">
+                                <?= $form->field($model, 'status')->textInput() ?>
+                            </div>
                         </div>
                         <div class="form-group">
-                            <?= Html::submitButton('Saqlash', ['class' => 'btn btn-success']) ?>
+                            <?= Html::submitButton('Saqlash', ['class' => 'btn btn-dark']) ?>
                         </div>
                     </div>
                 </div>

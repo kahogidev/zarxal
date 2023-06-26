@@ -43,7 +43,7 @@ class Faq extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['question', 'answer'], 'string'],
+            [['question', 'answer'], 'safe'],
             [['status'], 'integer'],
         ];
     }
@@ -55,9 +55,9 @@ class Faq extends \yii\db\ActiveRecord
     {
         return [
             'id' => 'ID',
-            'question' => 'Savollar',
-            'answer' => 'Javoblar',
-            'status' => 'Status',
+            'question'=> 'Savollar',
+            'answer' =>  'Javoblar',
+            'status' =>  'Status',
         ];
 
     }

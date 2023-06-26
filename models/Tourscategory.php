@@ -40,9 +40,9 @@ class Tourscategory extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['name'], 'required'],
+            [['name'], 'safe'],
             [['status'], 'integer'],
-            [['name', 'images'], 'string', 'max' => 255],
+            [['images'], 'string', 'max' => 255],
         ];
     }
 
@@ -53,7 +53,7 @@ class Tourscategory extends \yii\db\ActiveRecord
     {
         return [
             'id' => 'ID',
-            'name' => 'Kategoriya nomi',
+            'name' => 'Nomi',
             'images' => 'Rasm',
             'status' => 'Status',
         ];

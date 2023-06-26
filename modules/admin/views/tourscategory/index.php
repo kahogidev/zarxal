@@ -49,7 +49,13 @@ $this->params['breadcrumbs'][] = $this->title;
                 'format' => 'html'
 
             ],
-            'name',
+            [
+                'attribute' => 'name',
+                'value' => function ($model) {
+                    $name = json_decode($model->name, true);
+                    return $name[Yii::$app->language];
+                }
+            ],
             'status',
             [
                 'class' => 'yii\grid\ActionColumn',

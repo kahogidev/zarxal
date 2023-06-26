@@ -47,7 +47,7 @@ class Tours extends \yii\db\ActiveRecord
                     'class' => DateTimeBehavior::class,
                     'attribute' => 'created_at', //атрибут модели, который будем менять
                     'format' => 'dd.MM.yyyy HH:mm',   //формат вывода даты для пользователя
-//                'default' => 'today'
+                    'default' => 'today'
                 ],
 
 
@@ -62,11 +62,11 @@ class Tours extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['title', 'category_id', ], 'required'],
-            [['category_id', 'price', 'status'], 'integer'],
-            [['body'], 'string'],
-            [['created_at', 'updated_at'], 'safe'],
-            [['title', 'description', 'images', 'period'], 'string', 'max' => 255],
+            [['category_id', ], 'required'],
+            [['category_id','price','status'], 'integer'],
+            [['body'], 'safe'],
+            [['created_at', 'updated_at','title','description','body','period'], 'safe'],
+            [['images',], 'string', 'max' => 255],
         ];
     }
 

@@ -38,8 +38,20 @@ $this->params['breadcrumbs'][] = $this->title;
             ['class' => 'yii\grid\SerialColumn'],
 
             'id',
-            'question:ntext',
-            'answer:ntext',
+            [
+                'attribute' => 'question',
+                'value' => function ($model) {
+//                    $question = json_decode($model->question, true);
+                    return $model->question[Yii::$app->language];
+                }
+            ],
+            [
+                'attribute' => 'answer',
+                'value' => function ($model) {
+//                    $answer = json_decode($model->answer, true);
+                    return $model->answer[Yii::$app->language];
+                }
+            ],
             'status',
             [
                 'class' => 'yii\grid\ActionColumn',

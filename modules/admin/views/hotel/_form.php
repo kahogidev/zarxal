@@ -17,10 +17,32 @@ use yii\widgets\ActiveForm;
                     <h1><?= Html::encode($this->title) ?></h1>
                 </div>
                 <div class="card-body">
+                    <ul class="nav nav-tabs" id="myTab" role="tablist">
+                        <?php $languages = ['uz', 'en', 'ru'] ?>
+
+                        <?php foreach ($languages as $key => $language): ?>
+                            <li class="nav-item" role="presentation">
+                                <button class="nav-link <?= $key != 0 ? ' ' : 'active' ?>"
+                                        id="<?= $language ?>-tab"
+                                        data-bs-toggle="tab"
+                                        data-bs-target="#<?= $language ?>" type="button" role="tab"
+                                        aria-controls="<?= $language ?>"
+                                        aria-selected="true"><?= $language ?>
+                                </button>
+                            </li>
+                        <?php endforeach; ?>
+                    </ul>
+
                     <div class="basic-form">
                         <div class="row">
                             <div class="mb-3 col-md-6">
-                                <?= $form->field($model, 'country')->textInput(['maxlength' => true]) ?>
+                                <div class="tab-content" id="myTabContent">
+                                    <?php foreach ($languages as $key =>$language):?>
+                                        <div class="tab-pane <?= $key != 0 ? ' ' : 'show active' ?>" id="<?= $language ?>" role="tabpanel"  aria-labelledby="<?= $language ?>-tab">
+                                            <?= $form->field($model, 'country[' . $language . ']')->textInput() ?>
+                                        </div>
+                                    <?php endforeach;?>
+                                </div>
                             </div>
                             <div class="mb-3 col-md-6">
                                 <?= $form->field($model, 'name')->textInput(['maxlength' => true]) ?>
