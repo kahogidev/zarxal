@@ -7,6 +7,7 @@ use app\models\ClientsSearch;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
+use mPDF;
 
 /**
  * ClientsController implements the CRUD actions for Clients model.
@@ -31,11 +32,9 @@ class ClientsController extends DefaultController
 //        );
 //    }
 
-    /**
-     * Lists all Clients models.
-     *
-     * @return string
-     */
+
+
+
     public function actionIndex()
     {
         $searchModel = new ClientsSearch();
@@ -47,12 +46,7 @@ class ClientsController extends DefaultController
         ]);
     }
 
-    /**
-     * Displays a single Clients model.
-     * @param int $id ID
-     * @return string
-     * @throws NotFoundHttpException if the model cannot be found
-     */
+
     public function actionView($id)
     {
         return $this->render('view', [
@@ -60,18 +54,14 @@ class ClientsController extends DefaultController
         ]);
     }
 
-    /**
-     * Creates a new Clients model.
-     * If creation is successful, the browser will be redirected to the 'view' page.
-     * @return string|\yii\web\Response
-     */
+
     public function actionCreate()
     {
         $model = new Clients();
 
         if ($this->request->isPost) {
             if ($model->load($this->request->post()) && $model->save()) {
-                return $this->redirect(['index','id' => $model->id]);
+                return $this->redirect(['view','id' => $model->id]);
             }else{
                 print_r($model->errors);die();
             }
