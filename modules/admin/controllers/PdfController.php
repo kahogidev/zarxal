@@ -7,7 +7,6 @@ namespace app\modules\admin\controllers;
 use app\models\Clients;
 use app\modules\admin\controllers\DefaultController;
 use kartik\mpdf\Pdf;
-use kartik\mpdf\Pdff;
 
 
 class PdfController extends DefaultController
@@ -43,5 +42,9 @@ class PdfController extends DefaultController
             ]
         ]);
         return $pdf->render();
+
+
     }
+
+
 }

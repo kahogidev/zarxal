@@ -20,7 +20,7 @@
         "yiisoft/yii2-symfonymailer": "~2.0.3",
         "codemix/yii2-localeurls": "dev-master",
       "ext-json": "*",
-        "mpdf/mpdf": "^6.1"
+        "mpdf/mpdf": "dev-master"
     },
     "require-dev": {
         "yiisoft/yii2-debug": "~2.1.0",

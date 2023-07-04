@@ -114,7 +114,22 @@ class ClientsController extends DefaultController
      * @param int $id ID
      * @return Clients the loaded model
      * @throws NotFoundHttpException if the model cannot be found
+     *
      */
+public function actionPdf(){
+
+    $searchModel = new ClientsSearch();
+    $dataProvider = $searchModel->search($this->request->queryParams);
+    $html = $this->renderPartial('pdf_view',['dataProvider'=>$dataProvider]);
+    $mpdf = new \Mpdf\Mpdf();
+    $mpdf ->showImageErrors = true;
+    $mpdf ->SetDisplayMode('fullpage','two');
+    $mpdf ->list_indent_first_level = 0;
+    $mpdf ->writeHTML($html);
+    $mpdf -> Output();
+    exit;
+}
+
     protected function findModel($id)
     {
         if (($model = Clients::findOne(['id' => $id])) !== null) {
