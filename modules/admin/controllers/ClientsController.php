@@ -2,12 +2,16 @@
 
 namespace app\modules\admin\controllers;
 
+
 use app\models\Clients;
 use app\models\ClientsSearch;
+use kartik\mpdf\Pdf;
+use yii\base\ErrorException;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
 use mPDF;
+
 
 /**
  * ClientsController implements the CRUD actions for Clients model.
@@ -53,6 +57,12 @@ class ClientsController extends DefaultController
             'model' => $this->findModel($id),
         ]);
     }
+    public function actionPdff($id)
+    {
+        return $this->render('pdf', [
+            'model' => $this->findModel($id),
+        ]);
+    }
 
 
     public function actionCreate()
@@ -61,7 +71,7 @@ class ClientsController extends DefaultController
 
         if ($this->request->isPost) {
             if ($model->load($this->request->post()) && $model->save()) {
-                return $this->redirect(['view','id' => $model->id]);
+                return $this->redirect(['view']);
             }else{
                 print_r($model->errors);die();
             }
@@ -116,11 +126,9 @@ class ClientsController extends DefaultController
      * @throws NotFoundHttpException if the model cannot be found
      *
      */
-public function actionPdf(){
-
-    $searchModel = new ClientsSearch();
-    $dataProvider = $searchModel->search($this->request->queryParams);
-    $html = $this->renderPartial('pdf_view',['dataProvider'=>$dataProvider]);
+public function actionPdf($id){
+    $model = Clients::findOne($id);
+    $html = $this->renderPartial('pdf_view',['model' => $model]);
     $mpdf = new \Mpdf\Mpdf();
     $mpdf ->showImageErrors = true;
     $mpdf ->SetDisplayMode('fullpage','two');

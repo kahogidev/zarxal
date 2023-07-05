@@ -21,6 +21,7 @@ use yii\widgets\ActiveForm;
                 <div class="card-body">
                     <div class="basic-form">
                         <div class="row">
+
                             <div class="mb-3 col-md-6">
                                 <?= $form->field($model, 'client_lastname')->textInput(['maxlength' => true]) ?>
                             </div>
@@ -28,11 +29,27 @@ use yii\widgets\ActiveForm;
                                 <?= $form->field($model, 'client_firstname')->textInput(['maxlength' => true]) ?>
                             </div>
                             <div class="mb-3 col-md-6">
+                                <?= $form->field($model, 'client_full_name')->textInput(['maxlength' => true]) ?>
+                            </div>
+                            <div class="mb-3 col-md-6">
+                                <?= $form->field($model, 'client_live_address')->textInput(['maxlength' => true]) ?>
+                            </div>
+                            <div class="mb-3 col-md-6">
                                 <?= $form->field($model, 'client_passport_series')->textInput(['maxlength' => true]) ?>
                             </div>
                             <div class="mb-3 col-md-6">
                                 <?= $form->field($model, 'client_passport_number')->textInput() ?>
                             </div>
+                            <div class="mb-3 col-md-6">
+                                <?= $form->field($model, 'client_passport_given_date')->textInput(['maxlength' => true]) ?>
+                            </div>
+                            <div class="mb-3 col-md-6">
+                                <?= $form->field($model, 'client_passport_given_by')->textInput(['maxlength' => true]) ?>
+                            </div>
+                            <div class="mb-3 col-md-6">
+                                <?= $form->field($model, 'client_passport_jshir_number')->textInput(['maxlength' => true]) ?>
+                            </div>
+
                             <div class="mb-3 col-md-6">
                                 <?= $form->field($model, 'client_phone')->textInput() ?>
                             </div>

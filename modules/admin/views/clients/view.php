@@ -14,7 +14,7 @@ $this->params['breadcrumbs'][] = $this->title;
 <div class="clients-view">
 
     <h1><?= Html::encode($this->title) ?></h1>
-    <a href="<?=\yii\helpers\Url::to(['pdf/pdf', 'id'=>$model->id])?>" style="cursor: pointer"><i class="bx bxs-file-pdf" style="padding: 0.375rem 0.75rem; font-size: 2.5rem;"></i>download</a>
+    <a href="<?=\yii\helpers\Url::to(['pdf', 'id'=>$model->id])?>" style="cursor: pointer"><i class="bx bxs-file-pdf" style="padding: 0.375rem 0.75rem; font-size: 2.5rem;"></i>download</a>
     <p>
         <?= Html::a('Update', ['update', 'id' => $model->id], ['class' => 'btn btn-primary']) ?>
         <?= Html::a('Delete', ['delete', 'id' => $model->id], [
@@ -24,7 +24,7 @@ $this->params['breadcrumbs'][] = $this->title;
                 'method' => 'post',
             ],
         ]) ?>
-<!--        --><?//= Html::a('Shartnoma yuklab olish', ['gen-pdf', 'id' => $model->id], ['class' => 'btn btn-primary']) ?>
+        <button   class=" btn btn-warning" ><?= Html::a('Pdf yuklash', ['pdf', 'id' => $model->id],['style' =>'color:white;font-weight:bold']) ?></button>
     </p>
 
     <?= DetailView::widget([
@@ -33,8 +33,12 @@ $this->params['breadcrumbs'][] = $this->title;
             'id',
             'client_lastname',
             'client_firstname',
+            'client_full_name',
             'client_passport_series',
             'client_passport_number',
+            'client_passport_given_date',
+            'client_passport_given_by',
+            'client_passport_jshir_number',
             'client_phone',
             'tour_id',
             'sum_pay',
