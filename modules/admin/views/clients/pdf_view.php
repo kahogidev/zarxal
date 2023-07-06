@@ -26,15 +26,15 @@ $this->params['breadcrumbs'][] = $this->title;
     .center{
         text-align: center;
     }
-    .img{
+    /*.img{*/
 
-        background-image: url("admin-files/images/marmara.png");
-        background-repeat: no-repeat;
-        background-size: contain;
-        background-position: left top;
-        margin: 0;
+    /*    background-image: url("admin-files/images/marmara.png");*/
+    /*    background-repeat: no-repeat;*/
+    /*    background-size: contain;*/
+    /*    background-position: left top;*/
+    /*    margin: 0;*/
 
-    }
+    /*}*/
     .marginn{
         margin-top: -100px!important;
     }
@@ -43,7 +43,7 @@ $this->params['breadcrumbs'][] = $this->title;
 </style>
 <!--<img class="img"  src="admin-files/images/marmara.png" alt="">-->
 <div class="container marginn">
-    <div class="img"></div>
+<!--    <div class="img"></div>-->
     <div class="row ">
         <p style="font-size: 15px;font-weight: bold;text-align: center">ШАРТНОМА  № <?=$model->id?></p>
         <p style="text-align: center;font-size: 10px;">ЖИСМОНИЙ ШАХСЛАРГА ХИЗМАТ КЎРСАТИШ</p>

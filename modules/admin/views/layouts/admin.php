@@ -43,10 +43,7 @@ $this->registerLinkTag(['rel' => 'icon', 'type' => 'image/x-icon', 'href' => Yii
     <?= \app\modules\admin\widgets\Navbar::widget() ?>
     <?= \app\modules\admin\widgets\Sidebar::widget() ?>
     <div class="content-body">
-        <?= \app\modules\admin\widgets\Page::widget() ?>
-        <div class="container-fluid">
             <?= $content ?>
-        </div>
     </div>
     <div class="footer">
         <div class="copyright">

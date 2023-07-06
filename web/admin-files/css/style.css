@@ -26381,7 +26381,8 @@ body > * {
   justify-content: space-between;
   padding: 0.6rem 1.95rem 0.6rem;
   background: #ffffff;
-  position: relative;
+  /*position: fixed;*/
+    margin-top:30px;
   z-index: 1;
   border-bottom: 1px solid #E6E6E6;
   flex-flow: wrap; }
