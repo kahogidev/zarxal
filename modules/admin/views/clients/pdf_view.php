@@ -5,6 +5,7 @@ use yii\grid\GridView;
 
 
 
+
 $this->title='pdf view';
 $this->params['breadcrumbs'][] = $this->title;
 
@@ -57,7 +58,10 @@ $this->params['breadcrumbs'][] = $this->title;
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            <?=$model->created_at?>
+<!--            --><?//=$model->created_at?>
+            <?= date("d/m/y",strtotime($model->created_at))?>
+
+
         </p>
     </div>
     <div>
