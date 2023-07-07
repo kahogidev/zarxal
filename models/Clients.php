@@ -46,9 +46,9 @@ class Clients extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['client_lastname', 'client_firstname', 'client_passport_series', 'client_passport_number', 'client_phone', 'tour_id', 'sum_pay', 'sum_cash', 'sum_credit' ], 'required'],
+            [['client_live_address','client_passport_given_date','client_passport_given_by','client_passport_jshir_number','client_full_name','client_lastname', 'client_firstname', 'client_passport_series', 'client_passport_number', 'client_phone', 'tour_id', 'sum_pay', 'sum_cash', 'sum_credit' ], 'required'],
             [['client_passport_number', 'client_phone', 'tour_id', 'sum_pay', 'sum_cash', 'sum_credit', 'created_at', 'updated_at', 'status'], 'integer'],
-            [['client_lastname', 'client_firstname', 'client_passport_series'], 'string', 'max' => 255],
+            [['client_live_address','client_passport_given_date','client_passport_given_by','client_passport_jshir_number','client_full_name','client_lastname', 'client_firstname', 'client_passport_series'], 'string', 'max' => 255],
         ];
     }
 
@@ -59,10 +59,15 @@ class Clients extends \yii\db\ActiveRecord
     {
         return [
             'id' => 'ID',
-            'client_lastname' => 'Familiya',
             'client_firstname' => 'Ism',
+            'client_lastname' => 'Familiya',
+            'client_full_name' => 'Sharifi',
             'client_passport_series' => 'Passport Seriya',
             'client_passport_number' => 'Passport Nomer',
+            'client_passport_jshir_number' => 'Passport JSHSHIR Nomer',
+            'client_passport_given_by' => 'Passport berilgan joy',
+            'client_passport_given_date' => 'Passport berilgan vaqt',
+            'client_live_address' => 'Yashash manzil',
             'client_phone' => 'Telefon raqam',
             'tour_id' => 'Tour ID',
             'sum_pay' => 'Sum Pay',

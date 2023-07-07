@@ -71,7 +71,7 @@ class ClientsController extends DefaultController
 
         if ($this->request->isPost) {
             if ($model->load($this->request->post()) && $model->save()) {
-                return $this->redirect(['view']);
+                return $this->redirect(['index','id' => $model->id]);
             }else{
                 print_r($model->errors);die();
             }
