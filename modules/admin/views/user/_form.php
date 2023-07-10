@@ -55,7 +55,7 @@ use yii\widgets\ActiveForm;
 
 
                                     <div class="form-group">
-                                        <?= Html::submitButton('Saqlash', ['class' => 'btn btn-success']) ?>
+                                        <?= Html::submitButton('Saqlash', ['class' => 'btn btn-dark']) ?>
                                     </div>
                                 </div>
 

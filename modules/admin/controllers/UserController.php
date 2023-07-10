@@ -127,7 +127,7 @@ class UserController extends DefaultController
             }
         }
 
-        $userAvatar = StaticFunction::getImage('user',$model->id, $model->image);
+//        $userAvatar = StaticFunction::getImage('user',$model->id, $model->image);
 
         return $this->render('update', [
             'model' => $model,

@@ -8,10 +8,9 @@ use yii\widgets\ActiveForm;
 /** @var yii\widgets\ActiveForm $form */
 ?>
 
-
-            <div class="container-fluid">
-                <?php $form = ActiveForm::begin(); ?>
-                <div class="row">
+<div class="container-fluid align-content-center">
+    <?php $form = ActiveForm::begin(); ?>
+         <div class="row">
                     <div class="col-xl-9 col-lg-9">
                         <div class="card">
                             <div class="card-header">
@@ -29,15 +28,15 @@ use yii\widgets\ActiveForm;
 
                                     </div>
                                     <div class="form-group">
-                                        <?= Html::submitButton('Saqlash', ['class' => 'btn btn-success']) ?>
+                                        <?= Html::submitButton('Saqlash', ['class' => 'btn btn-dark']) ?>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
-                <?php ActiveForm::end(); ?>
-            </div>
+    <?php ActiveForm::end(); ?>
+</div>
 
 
 

@@ -33,6 +33,7 @@ $this->params['breadcrumbs'][] = $this->title;
     </ol>
 
 </div>
+
 <div class="container-fluid ">
     <div class="col-xl-12">
         <div class="card">
@@ -86,7 +87,7 @@ $this->params['breadcrumbs'][] = $this->title;
                                                 <div class="btn-group flex-left">
                                                     <a href="/admin/{$controller}/update?id={$model->id}" class="btn btn-light"><img style="width: 15px;" src="/admin-files/icons/edit-blue.svg" alt=""></i></a>
                                                     <a href="/admin/{$controller}/delete?id={$model->id}" id="{$controller}{$model->id}" data-postID="{$model->id}" data-postType="{$controller}" class="btn btn-primary "><img style="width: 15px;" src="/admin-files/icons/trash-white.svg" alt=""></a>
-                                                    <a href="/admin/{$controller}/pdf?id={$model->id}"  class="btn btn-dark"><img style="width: 15px;" src="/admin-files/icons/pdf.svg" alt=""></a>
+                                                    <a href="/admin/{$controller}/view?id={$model->id}"  class="btn btn-dark"><img style="width: 15px;" src="/admin-files/icons/eye-solid.svg" alt=""></a>
                                                     
                                                 </div>
                 BUTTONS;

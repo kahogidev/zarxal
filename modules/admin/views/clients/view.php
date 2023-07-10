@@ -40,17 +40,25 @@ $this->params['breadcrumbs'][] = $this->title;
 
                     <h1><?= Html::encode($this->title) ?></h1>
                 <!--    <a href="--><?//=\yii\helpers\Url::to(['pdf', 'id'=>$model->id])?><!--" style="cursor: pointer"><i class="bx bxs-file-pdf" style="padding: 0.375rem 0.75rem; font-size: 2.5rem;"></i>download</a>-->
-                    <p>
-                        <?= Html::a('Update', ['update', 'id' => $model->id], ['class' => 'btn btn-primary']) ?>
-                        <?= Html::a('Delete', ['delete', 'id' => $model->id], [
-                            'class' => 'btn btn-danger',
-                            'data' => [
-                                'confirm' => 'Are you sure you want to delete this item?',
-                                'method' => 'post',
-                            ],
-                        ]) ?>
-                        <button   class=" btn btn-warning" ><?= Html::a('Pdf yuklash', ['pdf', 'id' => $model->id],['style' =>'color:white;font-weight:bold']) ?></button>
-                    </p>
+                    <div class="container mb-4">
+                       <div class="row">
+                           <div class="col-11">
+                               <?= Html::a('Yangilash', ['Update', 'id' => $model->id], ['class' => 'btn btn-primary']) ?>
+                               <?= Html::a("O'chirish", ['Delete', 'id' => $model->id], [
+                                   'class' => 'btn btn-danger',
+                                   'data' => [
+                                       'confirm' => 'Are you sure you want to delete this item?',
+                                       'method' => 'post',
+                                   ],
+                               ]) ?>
+
+                           </div>
+                           <div class="col-1 btn btn-dark">
+                               <a href="<?=Url::to(['pdf','id'=>$model->id])?>"><img style="width:25px" src="/admin-files/icons/pdf.svg" alt=""></a>
+                           </div>
+                       </div>
+                    </div>
+
 
                     <?= DetailView::widget([
                         'model' => $model,
