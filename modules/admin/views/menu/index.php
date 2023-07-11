@@ -13,26 +13,42 @@ use yii\grid\GridView;
 $this->title = 'Menyular';
 $this->params['breadcrumbs'][] = $this->title;
 ?>
-<div class="col-xl-12">
-    <div class="card dz-card" id="bootstrap-table2">
+<div class="page-titles">
+    <ol style="width: 100%;" class="breadcrumb">
+        <li>
+            <h5 class="bc-title">
+                <svg width="17" height="17" viewBox="0 0 17 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M2.125 6.375L8.5 1.41667L14.875 6.375V14.1667C14.875 14.5424 14.7257 14.9027 14.4601 15.1684C14.1944 15.4341 13.8341 15.5833 13.4583 15.5833H3.54167C3.16594 15.5833 2.80561 15.4341 2.53993 15.1684C2.27426 14.9027 2.125 14.5424 2.125 14.1667V6.375Z" stroke="#2C2C2C" stroke-linecap="round" stroke-linejoin="round"></path>
+                    <path d="M6.375 15.5833V8.5H10.625V15.5833" stroke="#2C2C2C" stroke-linecap="round" stroke-linejoin="round"></path>
+                </svg>
+                <a href="<?=Url::to(['/'])?>"> Bosh sahifa</a>
+            </h5>
+        </li>
+        <li class="breadcrumb-item">
+            <a href="<?=Url::to(['/admin'])?>">Admin/</a>
+        </li>
+        <li class="active"><?= $this->title?></li>
 
+    </ol>
 
-        <div class="card-header flex-wrap d-flex justify-content-between  border-0">
-            <div>
-                <p class="card-title" style="font-size: 50px"><?= Html::encode($this->title) ?></p>
-
-            </div>
-            <ul class="nav nav-tabs dzm-tabs" id="myTab-1" role="tablist">
-                <li class="nav-item" role="presentation">
-                    <button   class=" btn btn-secondary" ><?= Html::a('Menyu yaratish', ['create'],['style' =>'color:white;font-weight:bold']) ?></button>
-                </li>
-
-            </ul>
-        </div>
-
-    <?php // echo $this->render('_search', ['model' => $searchModel]); ?>
-
-    <?= GridView::widget([
+</div>
+<div class="container-fluid ">
+    <div class="col-xl-12">
+        <div class="card">
+            <div class="card-body">
+                <div class="table-responsive dz-card" id="bootstrap-table5">
+                    <div class="card-header flex-wrap d-flex justify-content-between  border-0 margin">
+                        <div>
+                            <p class="card-title" style="font-size: 50px"><?= Html::encode($this->title) ?></p>
+                        </div>
+                        <ul class="nav nav-tabs dzm-tabs" id="myTab-1" role="tablist">
+                            <li class="nav-item" role="presentation">
+                                <button   class=" btn btn-secondary" ><?= Html::a("Yangi menyu yaratish", ['create'],['style' =>'color:white;font-weight:bold']) ?></button>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="card-body">
+                    <?= GridView::widget([
         'dataProvider' => $dataProvider,
         'filterModel' => $searchModel,
         'columns' => [
@@ -67,6 +83,9 @@ BUTTONS;
             ],
         ],
     ]); ?>
-
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 </div>

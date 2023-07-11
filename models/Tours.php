@@ -64,7 +64,6 @@ class Tours extends \yii\db\ActiveRecord
         return [
             [['category_id', ], 'required'],
             [['category_id','price','status'], 'integer'],
-            [['body'], 'safe'],
             [['created_at', 'updated_at','title','description','body','period'], 'safe'],
             [['images',], 'string', 'max' => 255],
         ];

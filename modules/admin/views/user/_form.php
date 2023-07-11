@@ -8,15 +8,14 @@ use yii\widgets\ActiveForm;
 /** @var yii\widgets\ActiveForm $form */
 ?>
 <div class="container-fluid">
-
-            <?php $form = ActiveForm::begin(); ?>
-            <div class="row">
-                <div class="col-xl-9 col-lg-9">
-                    <div class="card">
-                        <div class="card-header">
+    <?php $form = ActiveForm::begin(); ?>
+         <div class="row">
+        <div class="col-xl-9 col-lg-9">
+            <div class="card">
+                <div class="card-header">
                             <h1><?= Html::encode($this->title) ?></h1>
-                        </div>
-                        <div class="card-body">
+                </div>
+                <div class="card-body">
                             <div class="basic-form">
                                 <div class="row">
                                     <div class="mb-3 col-md-6">
@@ -61,23 +60,19 @@ use yii\widgets\ActiveForm;
 
 
                             </div>
-                    </div>
-                </div>
-                <div class="col-xl-3 col-lg-3">
-                    <div class="box">
-                        <div class="js--image-preview" style="background-image: url("<?=$model->getAvatarImage()?>")"></div>
-                    <div class="upload-options">
-                        <label class="btn-primary">
-                            <?= $form->field($model, 'image')->label(false)->fileInput(['accept'=>'image/*', 'class'=>'btn btn-primary image-upload ']) ?>
-                        </label>
-                    </div>
-                </div>
             </div>
-            <?php ActiveForm::end(); ?>
-
-
-
-
+        </div>
+        <div class="col-xl-3 col-lg-3">
+            <div class="box">
+                <div class="js--image-preview" style="background-image: url("<?=$model->getAvatarImage()?>")"></div>
+            <div class="upload-options">
+                <label class="btn-primary">
+                            <?= $form->field($model, 'image')->label(false)->fileInput(['accept'=>'image/*', 'class'=>'btn btn-primary image-upload ']) ?>
+                </label>
+            </div>
+        </div>
+    </div>
+    <?php ActiveForm::end(); ?>
 </div>
 
 

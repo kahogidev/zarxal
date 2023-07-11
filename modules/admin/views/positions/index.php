@@ -28,9 +28,7 @@ $this->params['breadcrumbs'][] = $this->title;
             <a href="<?=Url::to(['/admin'])?>">Admin/</a>
         </li>
         <li class="active"><?= $this->title?></li>
-
     </ol>
-
 </div>
 <div class="container-fluid ">
     <div class="col-xl-12">
@@ -45,13 +43,10 @@ $this->params['breadcrumbs'][] = $this->title;
                                     <li class="nav-item" role="presentation">
                                         <button   class=" btn btn-secondary" ><?= Html::a('Lavozim yaratish', ['create'],['style' =>'color:white;font-weight:bold']) ?></button>
                                     </li>
-
                                 </ul>
                             </div>
                             <div class="card-body">
-
-
-                            <?= GridView::widget([
+                                <?= GridView::widget([
         'dataProvider' => $dataProvider,
         'filterModel' => $searchModel,
         'columns' => [
@@ -82,10 +77,10 @@ BUTTONS;
             ],
         ],
     ]); ?>
-
-    </div>
-</div>
+                            </div>
+                </div>
             </div>
         </div>
     </div>
 </div>
+

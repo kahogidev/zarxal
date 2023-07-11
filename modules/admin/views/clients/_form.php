@@ -21,7 +21,6 @@ use yii\widgets\ActiveForm;
                 <div class="card-body">
                     <div class="basic-form">
                         <div class="row">
-
                             <div class="mb-3 col-md-6">
                                 <?= $form->field($model, 'client_lastname')->textInput(['maxlength' => true]) ?>
                             </div>
@@ -77,7 +76,7 @@ use yii\widgets\ActiveForm;
 
                         </div>
                         <div class="form-group">
-                            <?= Html::submitButton('Saqlash', ['class' => 'btn btn-success']) ?>
+                            <?= Html::submitButton('Saqlash', ['class' => 'btn btn-dark']) ?>
                         </div>
                     </div>
                 </div>
