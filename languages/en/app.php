@@ -1,48 +1,48 @@
 <?php
-return[
+return array(
     "main_lang"=>"English",
     "team" => "Our Team",
-    "tour1" => "Tour ",
-    "tour2" => "Keyingi ta'tilingizni rejalashtirishning muammosiz usulini qidiryapsizmi? Bizning tur paketlarimizdan boshqa narsani qidirmang! Biz sizning byudjetingiz va qiziqishlaringizga mos keladigan turli xil paketlarni taklif qilamiz, ularning barchasi stresssiz sayohat uchun kerak bo'lgan hamma narsani o'z ichiga oladi.",
-    "more" => "Batafsil",
-    "slider1" => "O'zbekiston bo'ylab sayohat",
-    "slider2" => "Dunyo bo'ylab sayohat",
-    "slider3" => "Betakror safarlar",
-    "about0" => "Biz haqimizda",
-    "about2" => "Shuningdek, bizda sayohatingizni mukammal rejalashtirishga yordam beradigan tajribali maslahatchilar jamoasi mavjud. Ular sizning byudjetingiz va qiziqishlaringizga mos keladigan maxsus marshrutni yaratish uchun siz bilan birga ishlaydi. Va ular yo'l davomida sizni qiziqtirgan barcha savollarga javob berish uchun u erda bo'ladi.",
-    "about1" => "Biz bilan siz sayohat shunchaki diqqatga sazovor joylarni ko'rishdan ko'ra ko'proq narsa ekanligiga ishonamiz. Bu yangi madaniyatlarni boshdan kechirish, yangi odamlar bilan tanishish va umr bo'yi davom etadigan xotiralarni yaratish haqida. Shuning uchun biz mijozlarimizga boshidan oxirigacha eng yaxshi sayohat tajribasini taqdim etishga intilamiz.",
-    "dest1" => "Tur paket",
-    "dest2" => "Kategoriyalari",
-    "service_t" => "Bizning xizmatlar",
-    "service1" => "Oson sayohat",
-    "service2" => "Qulay narxlar",
-    "service3" => "Doimiy aloqa",
-    "service1t" => "Bizda tajribali maslahatchilar jamoasi bor, ular sizga mukammal sayohatingizni rejalashtirishingizga yordam beradi.",
-    "service2t" => "Bizda reyslar, mehmonxonalar va tadbirlar uchun eksklyuziv takliflar va chegirmalardan foydalanish imkoniyati mavjud.",
-    "service3t" => "Sizni qiziqtirgan barcha savollarga 24/7 kun davomida javob berish uchun shu yerdamiz. ",
-    "why_us2" => "Nima uchun biz",
-    "why_us1" => "Sayohatni rejalashtirish stressli bo'lishi mumkinligini bilamiz. Shuning uchun biz bu qiyinchilikdan xalos bo'lish uchun keldik. Biz barcha tafsilotlarni hal qilamiz, shunda siz dam olishingiz va ta'tildan zavq olishingiz mumkin.
+    "tour1" => "Tour packages",
+    "tour2" => "Looking for a hassle-free way to plan your next vacation? Look no further than our tour packages! We offer a variety of packages to suit your budget and interests, all of which include everything you need for a stress-free trip. takes.",
+    "more" => "More",
+    "slider1" => "Travel around Uzbekistan",
+    "slider2" => "Travel Around the World",
+    "slider3" => "Unique Journeys",
+    "about0" => "About Us",
+    "about2" => "We also have a team of experienced consultants to help you plan your trip perfectly. They will work with you to create a custom itinerary that fits your budget and interests. And they are there to answer any questions you may have along the way. will be.",
+    "about1" => "You and I believe that travel is more than just sightseeing. It's about experiencing new cultures, meeting new people and making memories that will last a lifetime. That's why we strive to provide our customers with the best travel experience from start to finish.",
+    "dest1" => "Type package",
+    "dest2" => "Categories",
+    "service_t" => "Our Services",
+    "service1" => "Easy Travel",
+    "service2" => "Affordable prices",
+    "service3" => "Constant Communication",
+    "service1t" => "We have a team of experienced consultants to help you plan your perfect trip.",
+    "service2t" => "We have access to exclusive offers and discounts on flights, hotels and events.",
+    "service3t" => "We are here to answer all your questions 24/7. ",
+    "why_us2" => "Why us",
+    "why_us1" => "We know planning a trip can be stressful. That's why we're here to get rid of this hassle. We take care of all the details so you can relax and enjoy your vacation.
 
-Bizni tanlashning bir nechta sabablari:
+Here are some reasons to choose us:
 
-Bizda tajribali maslahatchilar jamoasi bor, ular sizga mukammal sayohatingizni rejalashtirishingizga yordam beradi.
-Biz sayohat xizmatlarining keng spektrini taklif etamiz, jumladan, parvozlarni bron qilish, mehmonxonani bron qilish, avtomobil ijarasi, kruiz bron qilish, viza yordami va sayohat sug'urtasi.
-Bizda reyslar, mehmonxonalar va tadbirlar uchun eksklyuziv takliflar va chegirmalardan foydalanish imkoniyati mavjud.
-Sizni qiziqtirgan barcha savollarga 24/7 kun davomida javob berish uchun shu yerdamiz.
-Xo'sh, nima kutmoqdasiz? Keyingi ta'tilni bron qilish uchun bugun biz bilan bog'laning!",
-    "banner1" => "Sayohatingiz maroqli bo'lsin",
-    "counter1" => "Mijozlar",
-    "counter2" => "Safarlar",
-    "counter3" => "Tur paketlar",
-    "counter4" => "Muvaffaqiyatli safarlar",
-    "testimonial1" => "Mijozlarimiz fikrlari",
-    "contact1" => "Ma'lumotlaringzni qoldiring",
-    "contact2" => "Biz bilan bog'laning",
-    "name1" => "Ismingiz",
-    "email1" => "Elektron pochta",
-    "tel1" => "Telefon raqam",
-    "send1" => "Yuborish",
-    "hotel1" => "Mehmonxonalar",
-    "hotel2" => "Bizda mehmonxonalarning keng tanlovi mavjud, shuning uchun siz keyingi ta'tilingiz uchun eng zo'r joyni topishingiz mumkin. Byudjetga mos variantni yoki hashamatli dam olishni qidiryapsizmi, bizda hamma uchun nimadir bor.",
-    "banner2" => "Biz barcha tafsilotlarni hal qilamiz, shunda siz dam olishingiz va ta'tildan zavq olishingiz mumkin",
-];
+We have a team of experienced consultants to help you plan your perfect trip.
+We offer a wide range of travel services including flight booking, hotel booking, car rental, cruise booking, visa assistance and travel insurance.
+We have access to exclusive offers and discounts on flights, hotels and events.
+We are here to answer all your questions 24/7.
+So what are you waiting for? Contact us today to book your next vacation!"  ,
+    "banner1" => "Have a nice trip",
+    "counter1" => "Clients",
+    "counter2" => "Trips",
+    "counter3" => "Tour packages",
+    "counter4" => "Successful Trips",
+    "testimonial1" => "Our customers' opinions",
+    "contact1" => "Leave your details",
+    "contact2" => "Contact Us",
+    "name1" => "Your name",
+    "email1" => "Your email",
+    "tel1" => "Your phone number",
+    "send1" => "Send",
+    "hotel1" => "Hotels",
+    "hotel2" => "We have a wide selection of hotels, so you can find the perfect place for your next vacation. Whether you're looking for a budget-friendly option or a luxury getaway, we have something for everyone.",
+    "banner2" => "We take care of all the details so you can relax and enjoy your vacation",
+);
