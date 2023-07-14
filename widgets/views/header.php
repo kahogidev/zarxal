@@ -5,7 +5,7 @@
                 <div class="header-top-left">
                     <a href="tel:(265)-920-8721"><i class="zmdi zmdi-phone"></i> (265) 920-8721</a>
                     <a href="mailto:rolfson.alvis@hotmail.com"><i class="zmdi zmdi-email"></i>rolfson.alvis@hotmail.com</a>
-                    <a href="#"><i class="zmdi zmdi-time"></i>Mon-Sat 8.00 - 18.00 Sunday CLOSED</a>
+                    <a href="#"><i class="zmdi zmdi-time"></i>Mon-Sat 8.00 - 18.00 Sunday CLOSED <?php echo Yii::$app->language?></a>
                 </div>
             </div>
             <div class="col-sm-4">
@@ -85,15 +85,34 @@
                 </div>
                 <div class="col-md-4 col-sm-8 col-xs-6">
                     <div class="header-right">
-                        <a href="#" class="travel-cart"><img src="frontend-files/img/cart-icon-img2.png" alt=""><span>0</span></a>
+                        <a href="#" class="travel-cart">
+                            <img src="frontend-files/img/cart-icon-img2.png" alt="">
+                            <span>0</span>
+
+                        </a>
                         <a href="#" class="search-icon-header"><i class="zmdi zmdi-search"></i></a>
                         <ul class="language-selector">
-                            <li><a href="#" class="header-flug"><img src="frontend-files/img/flug-1.jpg" alt=""><i class="zmdi zmdi-chevron-down"></i></a>
+                            <li><a href="#" class="header-flug"><?=Yii::t("app","main_lang")?> <?=Yii::$app->language?><i class="zmdi zmdi-chevron-down"></i></a>
                                 <ul>
-                                    <li><a href="#"><img src="frontend-files/img/flug-2.jpg" alt=""> <span>India</span></a></li>
-                                    <li><a href="#"><img src="frontend-files/img/flug-3.jpg" alt=""> <span>NewZealand</span></a></li>
-                                    <li><a href="#"><img src="frontend-files/img/flug-4.jpg" alt=""> <span>Sri Lanka</span></a></li>
-                                    <li><a href="#"><img src="frontend-files/img/flug-5.jpg" alt=""> <span>Zimbabwe</span></a></li>
+<!--                                    --><?php
+//                                        foreach (Yii::$app->params['language'] as $key =>$value){
+//                                            echo "<li><a href='".\yii\helpers\Url::to(['site/ozgar',"til"=>$key])."'><span>".$value."</span></a></li>";
+//
+//                                        }
+//                                    ?>
+
+
+                                        <?php
+                                        foreach (Yii::$app->params['languages'] as $key => $value) {
+                                            echo " <li><a  href='" . \yii\helpers\Url::current(['language' => $value]) . "'>$value</a></li>";
+                                        }
+                                        ?>
+
+
+<!--                                    <li><a href="#"><img src="frontend-files/img/flug-2.jpg" alt=""> <span>India</span></a></li>-->
+<!--                                    <li><a href="#"><img src="frontend-files/img/flug-3.jpg" alt=""> <span>NewZealand</span></a></li>-->
+<!--                                    <li><a href="#"><img src="frontend-files/img/flug-4.jpg" alt=""> <span>Sri Lanka</span></a></li>-->
+<!--                                    <li><a href="#"><img src="frontend-files/img/flug-5.jpg" alt=""> <span>Zimbabwe</span></a></li>-->
                                 </ul>
                             </li>
                         </ul>
@@ -113,7 +132,7 @@
                 <div class="container">
                     <div class="row">
                         <div class="col-md-10 col-md-offset-1">
-                            <h1><?= Yii::t("app", "slider1")?></h1>
+                            <h1><?= Yii::t("app", "slider1")?> </h1>
                         </div>
                     </div>
                 </div>

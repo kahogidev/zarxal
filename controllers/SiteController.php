@@ -125,4 +125,10 @@ class SiteController extends Controller
     {
         return $this->render('about');
     }
+
+    public function actionOzgar($til){
+        Yii::$app->session->set('til', $til);
+        Yii::$app->language=$til;
+        return $this->redirect(Yii::$app->request->referrer);
+    }
 }

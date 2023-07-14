@@ -20,19 +20,19 @@ $config = [
     ],
 
     'components' => [
-//        'i18n' => [
-//            'translations' => [
-//                'app*' => [
-//                    'class' => 'yii\i18n\PhpMessageSource',
-//                    'basePath' => '@app/languages',
-//                    //'sourceLanguage' => 'en-US',
-//                    'fileMap' => [
-//                        'app' => 'app.php',
-//                        'app/error' => 'error.php',
-//                    ],
-//                ],
-//            ],
-//        ],
+        'i18n' => [
+            'translations' => [
+                'app*' => [
+                    'class' => 'yii\i18n\PhpMessageSource',
+                    'basePath' => '@app/languages',
+                    //'sourceLanguage' => 'en-US',
+                    'fileMap' => [
+                        'app' => 'app.php',
+                        'app/error' => 'error.php',
+                    ],
+                ],
+            ],
+        ],
 
 
         'request' => [
@@ -68,11 +68,15 @@ $config = [
         'db' => $db,
 
         'urlManager' => [
+            // Override the urlManager component
+            'class' => 'codemix\localeurls\UrlManager',
+            'languages' => ['uz','en','ru'],
             'enablePrettyUrl' => true,
             'showScriptName' => false,
             'rules' => [
             ],
         ],
+
 
     ],
     'params' => $params,

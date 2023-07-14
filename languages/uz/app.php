@@ -1,5 +1,6 @@
 <?php
 return[
+    "main_lang"=>"O'zbekcha",
     "team" => "Bizning jamoamiz",
     "tour1" => "Tur paketlar",
     "tour2" => "Keyingi ta'tilingizni rejalashtirishning muammosiz usulini qidiryapsizmi? Bizning tur paketlarimizdan boshqa narsani qidirmang! Biz sizning byudjetingiz va qiziqishlaringizga mos keladigan turli xil paketlarni taklif qilamiz, ularning barchasi stresssiz sayohat uchun kerak bo'lgan hamma narsani o'z ichiga oladi.",
@@ -44,4 +45,4 @@ Xo'sh, nima kutmoqdasiz? Keyingi ta'tilni bron qilish uchun bugun biz bilan bog'
     "hotel1" => "Mehmonxonalar",
     "hotel2" => "Bizda mehmonxonalarning keng tanlovi mavjud, shuning uchun siz keyingi ta'tilingiz uchun eng zo'r joyni topishingiz mumkin. Byudjetga mos variantni yoki hashamatli dam olishni qidiryapsizmi, bizda hamma uchun nimadir bor.",
     "banner2" => "Biz barcha tafsilotlarni hal qilamiz, shunda siz dam olishingiz va ta'tildan zavq olishingiz mumkin",
-    ];
+];
