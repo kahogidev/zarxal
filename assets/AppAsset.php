@@ -30,6 +30,7 @@ class AppAsset extends AssetBundle
         "css/slicknav.min.css",
         "css/style.css",
         "css/responsive.css",
+        "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css",
     ];
     public $js = [
 

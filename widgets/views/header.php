@@ -5,7 +5,7 @@
                 <div class="header-top-left">
                     <a href="tel:(265)-920-8721"><i class="zmdi zmdi-phone"></i> (265) 920-8721</a>
                     <a href="mailto:rolfson.alvis@hotmail.com"><i class="zmdi zmdi-email"></i>rolfson.alvis@hotmail.com</a>
-                    <a href="#"><i class="zmdi zmdi-time"></i>Mon-Sat 8.00 - 18.00 Sunday CLOSED <?php echo Yii::$app->language?></a>
+                    <a href="#"><i class="zmdi zmdi-time"></i>Mon-Sat 8.00 - 18.00 Sunday CLOSED </a>
                 </div>
             </div>
             <div class="col-sm-4">
@@ -30,69 +30,36 @@
                         <a href="index-2.html"><img src="frontend-files/img/logo-hp2.png" alt=""></a>
                     </div>
                 </div>
-                <div class="col-md-6">
+                <div class="col-md-8">
                     <div class="mainmenu">
                         <ul id="slicknav-menu-list">
-                            <li><a href="index-2.html">Home</a>
-                                <ul>
-                                    <li><a href="index-3.html">Hompage two</a></li>
-                                    <li><a href="index-4.html">Hompage three</a></li>
-                                </ul>
-                            </li>
-                            <li><a href="tours.html">Tours</a>
-                                <ul>
-                                    <li><a href="tours-details.html">Tours Details</a></li>
-                                </ul>
-                            </li>
-                            <li><a href="about-us.html">About</a></li>
-                            <li><a href="destinations.html">Destination</a></li>
-                            <li><a href="team-member.html">Team</a>
-                                <ul>
-                                    <li><a href="team-details.html">Team Details</a></li>
-                                </ul>
-                            </li>
-                            <li><a href="#">Page</a>
-                                <ul>
-                                    <li><a href="car-booking.html">Car Booking</a></li>
-                                    <li><a href="car-list.html">Car List</a></li>
-                                    <li><a href="car-details.html">Car Details</a></li>
-                                    <li><a href="flight-home.html">Flight Home</a></li>
-                                    <li><a href="flight-booking.html">Flight Booking</a></li>
-                                    <li><a href="flight-details.html">Flight Details</a></li>
-                                    <li><a href="hotel-list.html">Hotel List</a></li>
-                                    <li><a href="hotel-details.html">Hotel Details</a></li>
-                                    <li><a href="hotel-booking.html">Hotel Booking</a></li>
-                                    <li><a href="shop.html">Shop</a></li>
-                                    <li><a href="shop-details.html">Shop Details</a></li>
-                                    <li><a href="cart.html">Cart</a></li>
-                                    <li><a href="checkout.html">Checkout</a></li>
-                                    <li><a href="contact-us.html">Contact Us</a></li>
-                                    <li><a href="contact-us-v2.html">Contact Us 2</a></li>
-                                    <li><a href="404.html">404 Error</a></li>
-                                    <li><a href="404-v2.html">404 Error 2</a></li>
-                                    <li><a href="#"></a></li>
-                                </ul>
-                            </li>
-                            <li><a href="blog-medium.html">Blog</a>
-                                <ul>
-                                    <li><a href="blog-details.html">Blog Details</a></li>
-                                    <li><a href="blog-left-sidebar.html">Blog left sidebar</a></li>
-                                    <li><a href="blog-right-sidebar.html">Blog right Sidebar</a></li>
-                                </ul>
-                            </li>
+
+                            <?php if (!empty($models)):?>
+                                <?php foreach ($models as $model): ?>
+                                    <li>
+                                        <a style="" href="<?=$model->link?>">
+                                            <?=$model->name?>
+                                        </a>
+                                    </li>
+                                <?php endforeach; ?>
+                            <?php endif; ?>
+
+
+
+                            <!--                            <li><a href="index-2.html">Home</a></li>-->
+<!--                            <li><a href="tours.html">Tours</a></li>-->
+<!--                            <li><a href="about-us.html">About</a></li>-->
+<!--                            <li><a href="destinations.html">Destination</a></li>-->
+<!--                            <li><a href="team-member.html">Team</a></li>-->
+<!--                            <li><a href="#">Page</a></li>-->
+<!--                            <li><a href="blog-medium.html">Blog</a></li>-->
                         </ul>
                     </div>
                 </div>
-                <div class="col-md-4 col-sm-8 col-xs-6">
+                <div class="col-md-2 col-sm-8 col-xs-6">
                     <div class="header-right">
-                        <a href="#" class="travel-cart">
-                            <img src="frontend-files/img/cart-icon-img2.png" alt="">
-                            <span>0</span>
-
-                        </a>
-                        <a href="#" class="search-icon-header"><i class="zmdi zmdi-search"></i></a>
                         <ul class="language-selector">
-                            <li><a href="#" class="header-flug"><?=Yii::t("app","main_lang")?> <?=Yii::$app->language?><i class="zmdi zmdi-chevron-down"></i></a>
+                            <li><a href="#" class="header-flug" style="font-weight:bold;"><i style="margin-right:5px;" class="fa-solid fa-earth-americas"></i><?=Yii::$app->language?><i class="zmdi zmdi-chevron-down"></i></a>
                                 <ul>
 <!--                                    --><?php
 //                                        foreach (Yii::$app->params['language'] as $key =>$value){
@@ -104,21 +71,15 @@
 
                                         <?php
                                         foreach (Yii::$app->params['languages'] as $key => $value) {
-                                            echo " <li><a  href='" . \yii\helpers\Url::current(['language' => $value]) . "'>$value</a></li>";
+                                            echo " <li><a style='color:white;font-weight: bold;'  href='" . \yii\helpers\Url::current(['language' => $value]) . "'>$value</a></li>";
                                         }
                                         ?>
-
-
-<!--                                    <li><a href="#"><img src="frontend-files/img/flug-2.jpg" alt=""> <span>India</span></a></li>-->
-<!--                                    <li><a href="#"><img src="frontend-files/img/flug-3.jpg" alt=""> <span>NewZealand</span></a></li>-->
-<!--                                    <li><a href="#"><img src="frontend-files/img/flug-4.jpg" alt=""> <span>Sri Lanka</span></a></li>-->
-<!--                                    <li><a href="#"><img src="frontend-files/img/flug-5.jpg" alt=""> <span>Zimbabwe</span></a></li>-->
                                 </ul>
                             </li>
                         </ul>
 
-                        <a href="<?=\yii\helpers\Url::to(["admin/user"])?>">Login</a>
-                        <a href="register.html">Register</a>
+                        <a href="<?=\yii\helpers\Url::to(["admin/user"])?>"><i class="fa-solid fa-user fa-1x"></i></a>
+
                     </div>
                     <div class="slicknav-menu-wrap"></div>
                 </div>

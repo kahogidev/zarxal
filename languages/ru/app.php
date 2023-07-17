@@ -1,48 +1,48 @@
 <?php
 return[
     "main_lang"=>"Русскый",
-    "team" => "Bizning jamoamiz",
-    "tour1" => "Tur paketlar",
-    "tour2" => "Keyingi ta'tilingizni rejalashtirishning muammosiz usulini qidiryapsizmi? Bizning tur paketlarimizdan boshqa narsani qidirmang! Biz sizning byudjetingiz va qiziqishlaringizga mos keladigan turli xil paketlarni taklif qilamiz, ularning barchasi stresssiz sayohat uchun kerak bo'lgan hamma narsani o'z ichiga oladi.",
-    "more" => "Batafsil",
-    "slider1" => "O'zbekiston bo'ylab sayohat",
-    "slider2" => "Dunyo bo'ylab sayohat",
-    "slider3" => "Betakror safarlar",
-    "about0" => "Biz haqimizda",
-    "about2" => "Shuningdek, bizda sayohatingizni mukammal rejalashtirishga yordam beradigan tajribali maslahatchilar jamoasi mavjud. Ular sizning byudjetingiz va qiziqishlaringizga mos keladigan maxsus marshrutni yaratish uchun siz bilan birga ishlaydi. Va ular yo'l davomida sizni qiziqtirgan barcha savollarga javob berish uchun u erda bo'ladi.",
-    "about1" => "Biz bilan siz sayohat shunchaki diqqatga sazovor joylarni ko'rishdan ko'ra ko'proq narsa ekanligiga ishonamiz. Bu yangi madaniyatlarni boshdan kechirish, yangi odamlar bilan tanishish va umr bo'yi davom etadigan xotiralarni yaratish haqida. Shuning uchun biz mijozlarimizga boshidan oxirigacha eng yaxshi sayohat tajribasini taqdim etishga intilamiz.",
-    "dest1" => "Tur paket",
-    "dest2" => "Kategoriyalari",
-    "service_t" => "Bizning xizmatlar",
-    "service1" => "Oson sayohat",
-    "service2" => "Qulay narxlar",
-    "service3" => "Doimiy aloqa",
-    "service1t" => "Bizda tajribali maslahatchilar jamoasi bor, ular sizga mukammal sayohatingizni rejalashtirishingizga yordam beradi.",
-    "service2t" => "Bizda reyslar, mehmonxonalar va tadbirlar uchun eksklyuziv takliflar va chegirmalardan foydalanish imkoniyati mavjud.",
-    "service3t" => "Sizni qiziqtirgan barcha savollarga 24/7 kun davomida javob berish uchun shu yerdamiz. ",
-    "why_us2" => "Nima uchun biz",
-    "why_us1" => "Sayohatni rejalashtirish stressli bo'lishi mumkinligini bilamiz. Shuning uchun biz bu qiyinchilikdan xalos bo'lish uchun keldik. Biz barcha tafsilotlarni hal qilamiz, shunda siz dam olishingiz va ta'tildan zavq olishingiz mumkin.
+    "team" => "Наша команда",
+    "tour1" => "Турпакеты",
+    "tour2" => "Ищете простой способ спланировать свой следующий отпуск? Не ищите ничего, кроме наших туристических пакетов! Мы предлагаем различные пакеты в соответствии с вашим бюджетом и интересами, каждый из которых включает в себя все необходимое для стресса -бесплатная поездка. берет.",
+     "more" => "Еще" ,
+     "slider1" => "Путешествие по Узбекистану",
+     "slider2" => "Кругосветное путешествие",
+     "slider3" => "Уникальные путешествия",
+     "about0" => "О нас",
+     "about2" => "У нас также есть команда опытных консультантов, которые помогут вам идеально спланировать поездку. Они будут работать с вами, чтобы создать индивидуальный маршрут, который соответствует вашему бюджету и интересам. И они готовы ответить на любые ваши вопросы. по ходу.будет.",
+     "about1" => "Мы с вами верим, что путешествия - это больше, чем просто осмотр достопримечательностей. Это знакомство с новыми культурами, встречи с новыми людьми и воспоминания, которые останутся на всю жизнь. Вот почему мы стремимся предоставить нашим клиентам лучший опыт путешествий от начать до конца.",
+     "dest1" => "Турпакет",
+     "dest2" => "Категории",
+     "service_t" => "Наши услуги",
+     "service1" => "Легкое путешествие",
+     "service2" => "Доступные цены",
+     "service3" => "Постоянная связь",
+     "service1t" => "У нас есть команда опытных консультантов, которые помогут вам спланировать идеальное путешествие.",
+     "service2t" => "У нас есть доступ к эксклюзивным предложениям и скидкам на авиабилеты, отели и мероприятия.",
+     "service3t" => "Мы здесь, чтобы ответить на все ваши вопросы 24/7. ",
+     "why_us2" => "Почему мы",
+    "why_us1" => "Мы знаем, что планирование поездки может быть стрессовым. Вот почему мы здесь, чтобы избавить вас от хлопот. Мы позаботимся обо всех деталях, чтобы вы могли расслабиться и насладиться отдыхом.
 
-Bizni tanlashning bir nechta sabablari:
+Вот несколько причин выбрать нас:
 
-Bizda tajribali maslahatchilar jamoasi bor, ular sizga mukammal sayohatingizni rejalashtirishingizga yordam beradi.
-Biz sayohat xizmatlarining keng spektrini taklif etamiz, jumladan, parvozlarni bron qilish, mehmonxonani bron qilish, avtomobil ijarasi, kruiz bron qilish, viza yordami va sayohat sug'urtasi.
-Bizda reyslar, mehmonxonalar va tadbirlar uchun eksklyuziv takliflar va chegirmalardan foydalanish imkoniyati mavjud.
-Sizni qiziqtirgan barcha savollarga 24/7 kun davomida javob berish uchun shu yerdamiz.
-Xo'sh, nima kutmoqdasiz? Keyingi ta'tilni bron qilish uchun bugun biz bilan bog'laning!",
-    "banner1" => "Sayohatingiz maroqli bo'lsin",
-    "counter1" => "Mijozlar",
-    "counter2" => "Safarlar",
-    "counter3" => "Tur paketlar",
-    "counter4" => "Muvaffaqiyatli safarlar",
-    "testimonial1" => "Mijozlarimiz fikrlari",
-    "contact1" => "Ma'lumotlaringzni qoldiring",
-    "contact2" => "Biz bilan bog'laning",
-    "name1" => "Ismingiz",
-    "email1" => "Elektron pochta",
-    "tel1" => "Telefon raqam",
-    "send1" => "Yuborish",
-    "hotel1" => "Mehmonxonalar",
-    "hotel2" => "Bizda mehmonxonalarning keng tanlovi mavjud, shuning uchun siz keyingi ta'tilingiz uchun eng zo'r joyni topishingiz mumkin. Byudjetga mos variantni yoki hashamatli dam olishni qidiryapsizmi, bizda hamma uchun nimadir bor.",
-    "banner2" => "Biz barcha tafsilotlarni hal qilamiz, shunda siz dam olishingiz va ta'tildan zavq olishingiz mumkin",
+У нас есть команда опытных консультантов, которые помогут вам спланировать идеальное путешествие.
+Мы предлагаем широкий спектр туристических услуг, включая бронирование авиабилетов, бронирование отелей, прокат автомобилей, бронирование круизов, визовую помощь и страхование путешествий.
+У нас есть доступ к эксклюзивным предложениям и скидкам на авиабилеты, отели и мероприятия.
+Мы здесь, чтобы ответить на все ваши вопросы 24/7.
+И так, чего же ты ждешь? Свяжитесь с нами сегодня, чтобы забронировать свой следующий отпуск!" ,
+    "banner1" => "Приятной поездки",
+    "counter1" => "Клиенты",
+    "counter2" => "Поездки",
+    "counter3" => "Тип пакетов",
+    "counter4" => "Успешные поездки",
+    "testimonial1" => "Мнения наших клиентов",
+    "contact1" => "Оставьте свои данные",
+    "contact2" => "Свяжитесь с нами",
+    "name1" => "Ваше имя",
+    "email1" => "Электронная почта",
+    "tel1" => "Номер телефона",
+    "send1" => "Отправить",
+    "hotel1" => "Отели",
+    "hotel2" => "У нас есть широкий выбор отелей, так что вы сможете найти идеальное место для вашего следующего отпуска. Ищете ли вы недорогой вариант или роскошный отдых, у нас есть что-то для каждого.",
+    "banner2" => "Мы позаботимся обо всех деталях, чтобы вы могли расслабиться и насладиться отдыхом",
 ];

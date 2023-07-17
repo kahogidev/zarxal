@@ -55,7 +55,18 @@ $this->params['breadcrumbs'][] = $this->title;
             ['class' => 'yii\grid\SerialColumn'],
 
             'id',
-            'name',
+            [
+                    'attribute' => 'name',
+                'value'=> function($model){
+                        $name = json_decode($model->name,true);
+                        return $name[Yii::$app->language];
+                }
+//            'attribute' => 'name',
+//                'value' => function ($model) {
+////                    $question = json_decode($model->question, true);
+//                    return $model->name[Yii::$app->language];
+//                }
+            ],
             'link',
             'position',
             'order_by',

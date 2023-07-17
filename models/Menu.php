@@ -31,9 +31,10 @@ class Menu extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['name', 'link', 'position', 'order_by'], 'required'],
+            [['link', 'position', 'order_by'], 'required'],
             [['position', 'order_by', 'parent', 'status'], 'integer'],
-            [['name', 'link'], 'string', 'max' => 255],
+            [['name'],'safe'],
+            [['link'], 'string', 'max' => 255],
         ];
     }
 

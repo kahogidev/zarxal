@@ -11,7 +11,7 @@ return array(
     "about0" => "About Us",
     "about2" => "We also have a team of experienced consultants to help you plan your trip perfectly. They will work with you to create a custom itinerary that fits your budget and interests. And they are there to answer any questions you may have along the way. will be.",
     "about1" => "You and I believe that travel is more than just sightseeing. It's about experiencing new cultures, meeting new people and making memories that will last a lifetime. That's why we strive to provide our customers with the best travel experience from start to finish.",
-    "dest1" => "Type package",
+    "dest1" => "Tour package",
     "dest2" => "Categories",
     "service_t" => "Our Services",
     "service1" => "Easy Travel",

@@ -19,15 +19,15 @@ class MenuController extends DefaultController
     public function behaviors()
     {
         return array_merge(
-            parent::behaviors(),
-            [
-                'verbs' => [
-                    'class' => VerbFilter::className(),
-                    'actions' => [
-                        'delete' => ['POST'],
-                    ],
-                ],
-            ]
+//            parent::behaviors(),
+//            [
+//                'verbs' => [
+//                    'class' => VerbFilter::className(),
+//                    'actions' => [
+//                        'delete' => ['POST'],
+//                    ],
+//                ],
+//            ]
         );
     }
 
@@ -112,7 +112,6 @@ class MenuController extends DefaultController
     public function actionDelete($id)
     {
         $this->findModel($id)->delete();
-
         return $this->redirect(['index']);
     }
 
