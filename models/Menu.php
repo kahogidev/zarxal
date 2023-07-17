@@ -2,6 +2,7 @@
 
 namespace app\models;
 
+use app\models\behaviors\ConvertBehaviors;
 use Yii;
 
 /**
@@ -35,6 +36,16 @@ class Menu extends \yii\db\ActiveRecord
             [['position', 'order_by', 'parent', 'status'], 'integer'],
             [['name'],'safe'],
             [['link'], 'string', 'max' => 255],
+        ];
+    }
+    public function behaviors()
+    {
+        return [
+            'convertBehavior' => [
+                'class' => ConvertBehaviors::class,
+                'attributes' => ['name']
+            ],
+
         ];
     }
 

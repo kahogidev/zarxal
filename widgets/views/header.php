@@ -38,7 +38,7 @@
                                 <?php foreach ($models as $model): ?>
                                     <li>
                                         <a style="" href="<?=$model->link?>">
-                                            <?=$model->name?>
+                                            <?=$model->name[Yii::$app->language]?>
                                         </a>
                                     </li>
                                 <?php endforeach; ?>
@@ -61,18 +61,10 @@
                         <ul class="language-selector">
                             <li><a href="#" class="header-flug" style="font-weight:bold;"><i style="margin-right:5px;" class="fa-solid fa-earth-americas"></i><?=Yii::$app->language?><i class="zmdi zmdi-chevron-down"></i></a>
                                 <ul>
-<!--                                    --><?php
-//                                        foreach (Yii::$app->params['language'] as $key =>$value){
-//                                            echo "<li><a href='".\yii\helpers\Url::to(['site/ozgar',"til"=>$key])."'><span>".$value."</span></a></li>";
-//
-//                                        }
-//                                    ?>
-
-
                                         <?php
-                                        foreach (Yii::$app->params['languages'] as $key => $value) {
-                                            echo " <li><a style='color:white;font-weight: bold;'  href='" . \yii\helpers\Url::current(['language' => $value]) . "'>$value</a></li>";
-                                        }
+                                            foreach (Yii::$app->params['languages'] as $key => $value) {
+                                                echo " <li><a style='color:white;font-weight: bold;'  href='" . \yii\helpers\Url::current(['language' => $value]) . "'>$value</a></li>";
+                                            }
                                         ?>
                                 </ul>
                             </li>

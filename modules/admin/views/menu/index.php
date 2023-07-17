@@ -56,16 +56,16 @@ $this->params['breadcrumbs'][] = $this->title;
 
             'id',
             [
-                    'attribute' => 'name',
-                'value'=> function($model){
-                        $name = json_decode($model->name,true);
-                        return $name[Yii::$app->language];
-                }
-//            'attribute' => 'name',
-//                'value' => function ($model) {
-////                    $question = json_decode($model->question, true);
-//                    return $model->name[Yii::$app->language];
+//                    'attribute' => 'name',
+//                'value'=> function($model){
+//                        $name = json_decode($model->name,true);
+//                        return $name[Yii::$app->language];
 //                }
+            'attribute' => 'name',
+                'value' => function ($model) {
+//                    $question = json_decode($model->question, true);
+                    return $model->name[Yii::$app->language];
+                }
             ],
             'link',
             'position',
