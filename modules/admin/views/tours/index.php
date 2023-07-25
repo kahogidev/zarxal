@@ -54,7 +54,8 @@ $this->params['breadcrumbs'][] = $this->title;
                         'columns' => [
                             ['class' => 'yii\grid\SerialColumn'],
 
-                            'id',
+
+//                            'id',
                             [
                                 'attribute' => 'title',
                                 'value' => function ($model) {
@@ -62,22 +63,22 @@ $this->params['breadcrumbs'][] = $this->title;
                                     return $title[Yii::$app->language];
                                 }
                             ],
-                            [
-                                'attribute' => 'description',
-                                'value' => function ($model) {
-                                    $description = json_decode($model->description, true);
-                                    return $description[Yii::$app->language];
-                                }
-                            ],
+//                            [
+//                                'attribute' => 'description',
+//                                'value' => function ($model) {
+//                                    $description = json_decode($model->description, true);
+//                                    return $description[Yii::$app->language];
+//                                }
+//                            ],
                             'category_id',
-                            [
-                                'attribute' => 'body',
-                                'value' => function ($model) {
-                                    $body = json_decode($model->body, true);
-                                    return $body[Yii::$app->language];
-                                }
-                            ],
-                            'created_at:datetime',
+//                            [
+//                                'attribute' => 'body',
+//                                'value' => function ($model) {
+//                                    $body = json_decode($model->body, true);
+//                                    return $body[Yii::$app->language];
+//                                }
+//                            ],
+//                            'created_at:datetime',
                             //'updated_at',
                             [ 'attribute' =>'images',
                                 'value' => function($data){
@@ -87,9 +88,16 @@ $this->params['breadcrumbs'][] = $this->title;
                                 'format' => 'html'
 
                             ],
-                            //'price',
-                            //'period',
-                            //'status',
+                            'price',
+
+                            [
+                                'attribute' => 'period',
+                                'value' => function ($model) {
+                                    $period = json_decode($model->period, true);
+                                    return $period[Yii::$app->language];
+                                }
+                            ],
+                            'status',
                             [
                                 'class' => 'yii\grid\ActionColumn',
                                 'header' => 'Amallar',

@@ -21,7 +21,8 @@
         "codemix/yii2-localeurls": "dev-master",
       "ext-json": "*",
         "mpdf/mpdf": "dev-master",
-        "lajax/yii2-translate-manager": "dev-master"
+        "lajax/yii2-translate-manager": "dev-master",
+        "2amigos/yii2-ckeditor-widget": "^2.2"
     },
     "require-dev": {
         "yiisoft/yii2-debug": "~2.1.0",

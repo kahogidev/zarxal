@@ -13,42 +13,64 @@
         <div class="row">
             <div class="col-md-12">
                 <div class="destination-honeymoon-carousel owl-carousel">
-                    <div class="destinations-honeymoon-single-item">
-                        <div class="destination-honeymoon-bg1">
-                            <img src="/frontend-files/img/destination-honeymoon-bg2.jpg" alt="">
-                        </div>
-                        <div class="destination-honeymoon-text">
-                            <h4>Penang, malaysia</h4>
-                            <h3>$510</h3>
-                        </div>
-                    </div>
-                    <div class="destinations-honeymoon-single-item">
-                        <div class="destination-honeymoon-bg1">
-                            <img src="/frontend-files/img/destination-honeymoon-bg2.jpg" alt="">
-                        </div>
-                        <div class="destination-honeymoon-text">
-                            <h4>AArhus, denmark</h4>
-                            <h3>$780</h3>
-                        </div>
-                    </div>
-                    <div class="destinations-honeymoon-single-item">
-                        <div class="destination-honeymoon-bg1">
-                            <img src="/frontend-files/img/destination-honeymoon-bg2.jpg" alt="">
-                        </div>
-                        <div class="destination-honeymoon-text">
-                            <h4>western iceland</h4>
-                            <h3>$1300</h3>
-                        </div>
-                    </div>
-                    <div class="destinations-honeymoon-single-item">
-                        <div class="destination-honeymoon-bg1">
-                            <img src="/frontend-files/img/destination-honeymoon-bg2.jpg" alt="">
-                        </div>
-                        <div class="destination-honeymoon-text">
-                            <h4>AArhus, denmark</h4>
-                            <h3>$780</h3>
-                        </div>
-                    </div>
+
+
+
+
+<!--                    <div class="destinations-honeymoon-single-item">-->
+<!--                        <div class="destination-honeymoon-bg1">-->
+<!--                            <img src="/frontend-files/img/destination-honeymoon-bg2.jpg" alt="">-->
+<!--                        </div>-->
+<!--                        <div class="destination-honeymoon-text">-->
+<!--                            <h4>Penang, malaysia</h4>-->
+<!--                            <h3>$510</h3>-->
+<!--                        </div>-->
+<!--                    </div>-->
+
+
+
+                    <?php if (!empty($models)):?>
+                        <?php foreach ($models as $model): ?>
+                            <div class="destinations-honeymoon-single-item">
+<!--                                <div class="destination-honeymoon-bg1">-->
+<!--                                    <img src="/uploads/tours/--><?php //=\app\models\Tours::findOne(Yii::$app->user->getId())->id?><!--/--><?php //=\app\models\Tours::findOne(Yii::$app->user->getId())->id?><!--/--><?php //=\app\models\Tours::findOne(Yii::$app->user->getId())->images?><!--" alt="">-->
+<!--                                </div>-->
+                                <div class="destination-honeymoon-text">
+                                    <h4><?=$model->title[Yii::$app->language]?></h4>
+                                    <h3><?=$model->price[Yii::$app->language]?></h3>
+                                </div>
+                            </div>
+
+                        <?php endforeach; ?>
+                    <?php endif; ?>
+
+<!--                    <div class="destinations-honeymoon-single-item">-->
+<!--                        <div class="destination-honeymoon-bg1">-->
+<!--                            <img src="/frontend-files/img/destination-honeymoon-bg2.jpg" alt="">-->
+<!--                        </div>-->
+<!--                        <div class="destination-honeymoon-text">-->
+<!--                            <h4>AArhus, denmark</h4>-->
+<!--                            <h3>$780</h3>-->
+<!--                        </div>-->
+<!--                    </div>-->
+<!--                    <div class="destinations-honeymoon-single-item">-->
+<!--                        <div class="destination-honeymoon-bg1">-->
+<!--                            <img src="/frontend-files/img/destination-honeymoon-bg2.jpg" alt="">-->
+<!--                        </div>-->
+<!--                        <div class="destination-honeymoon-text">-->
+<!--                            <h4>western iceland</h4>-->
+<!--                            <h3>$1300</h3>-->
+<!--                        </div>-->
+<!--                    </div>-->
+<!--                    <div class="destinations-honeymoon-single-item">-->
+<!--                        <div class="destination-honeymoon-bg1">-->
+<!--                            <img src="/frontend-files/img/destination-honeymoon-bg2.jpg" alt="">-->
+<!--                        </div>-->
+<!--                        <div class="destination-honeymoon-text">-->
+<!--                            <h4>AArhus, denmark</h4>-->
+<!--                            <h3>$780</h3>-->
+<!--                        </div>-->
+<!--                    </div>-->
                 </div>
             </div>
         </div>

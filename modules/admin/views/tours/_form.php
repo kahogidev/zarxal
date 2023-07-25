@@ -1,5 +1,6 @@
 <?php
 
+use dosamigos\ckeditor\CKEditor;
 use yii\helpers\Html;
 use yii\widgets\ActiveForm;
 
@@ -14,7 +15,7 @@ use yii\widgets\ActiveForm;
             <div class="col-xl-9 col-lg-9">
                 <div class="card">`
                     <div class="card-header">
-                        <h1><?= Html::encode($this->title) ?></h1>
+<!--                        <h1>--><?php //= Html::encode($this->title) ?><!--</h1>-->
                     </div>
                     <div class="card-body">
                         <ul class="nav nav-tabs" id="myTab" role="tablist">
@@ -33,30 +34,9 @@ use yii\widgets\ActiveForm;
                                 <?php endforeach; ?>
                             </ul>
 
+
                         <div class="basic-form">
-                            <div class="tab-content" id="myTabContent">
-                                <?php foreach ($languages as $key =>$language):?>
-                                    <div class="tab-pane <?= $key != 0 ? ' ' : 'show active' ?>" id="<?= $language ?>" role="tabpanel"  aria-labelledby="<?= $language ?>-tab">
-                                        <div class="row">
-                                            <div class="mb-3 col-md-6">
-                                                <?= $form->field($model, 'description[' . $language . ']')->textInput() ?>
-                                            </div>
-                                            <div class="mb-3 col-md-6">
-                                                <?= $form->field($model, 'title[' . $language . ']')->textInput() ?>
-                                            </div>
-                                            <div class="mb-3 col-md-6">
-                                                <?= $form->field($model, 'body[' . $language . ']')->textInput() ?>
-                                            </div>
-                                            <div class="mb-3 col-md-6">
-                                                <?= $form->field($model, 'period[' . $language . ']')->textInput(['maxlength' => true]) ?>
-                                            </div>
-                                        </div>
-                                    </div>
-                                <?php endforeach;?>
-                            </div>
-                        </div>
-                        <div class="basic-form">
-                                <div class="row">
+                                <div class="row mt-2">
                                     <div class="mb-3 col-md-6">
                                         <?= $form->field($model, 'category_id')->textInput() ?>
                                     </div>
@@ -81,11 +61,61 @@ use yii\widgets\ActiveForm;
                                             </label>
                                         </div>
                                     </div>
+
                                 </div>
-                                <div class="form-group">
-                                    <?= Html::submitButton('Saqlash', ['class' => 'btn btn-dark']) ?>
-                                </div>
+
                             </div>
+                        <div class="basic-form">
+                            <div class="row">
+                                <div class="tab-content" id="myTabContent">
+                                    <?php foreach ($languages as $key =>$language):?>
+                                        <div class="tab-pane <?= $key != 0 ? ' ' : 'show active' ?>" id="<?= $language ?>" role="tabpanel"  aria-labelledby="<?= $language ?>-tab">
+                                            <div class="row d-flex">
+                                                <div class="mb-3 col-md-12">
+                                                    <?= $form->field($model, 'period[' . $language . ']')->textInput(['maxlength' => true]) ?>
+                                                </div>
+                                            </div>
+                                            <div class="row d-flex">
+                                                <div class="mb-3 col-md-6">
+                                                    <?= $form->field($model, 'title[' . $language . ']')->widget(CKEditor::className(),[
+                                                        'preset' => 'standard',
+                                                        'options' => ['rows' => 6]
+
+
+                                                    ]) ?>
+
+                                                </div>
+                                                <div class="mb-3 col-md-6">
+                                                    <?= $form->field($model, 'description[' . $language . ']')->widget(CKEditor::className(),[
+                                                        'preset' => 'standard',
+                                                        'options' => ['rows' => 6]
+
+
+                                                    ]) ?>
+
+                                                </div>
+                                            </div>
+                                            <div class="row d-flex">
+                                                <div class="mb-3 col-md-12">
+                                                    <?= $form->field($model, 'body[' . $language . ']')->widget(CKEditor::className(),[
+                                                        'preset' => 'standard',
+                                                        'options' => ['rows' => 6]
+
+
+                                                    ]) ?>
+                                                </div>
+                                            </div>
+
+
+                                        </div>
+                                    <?php endforeach;?>
+                                </div>
+
+                            </div>
+                            <div class="form-group">
+                                <?= Html::submitButton('Saqlash', ['class' => 'btn btn-dark']) ?>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
